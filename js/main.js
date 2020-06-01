@@ -202,7 +202,7 @@ function init() {
 		object.position.y = - (table[i + 4] * 180) + 990;//Num de columna
 
 		targets.table.push(object);
-		objetoEnTable.push(object);//ver si es lo mismo de arriba//esto voy a tener que usar para los eventos
+		objetoEnTable.push(object);//esto voy a tener que usar para los eventos
 
 	}
 
