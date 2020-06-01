@@ -283,10 +283,6 @@ function animate() {
 	TWEEN.update();
 
 	controls.update();
-
-	//objetoEnTable[0].rotation.x = 5;
-	/*console.log(objetoEnTable[0]);
-	objetoEnTable[0].translateX(5);*/
 }
 
 function render() {
