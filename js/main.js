@@ -135,8 +135,8 @@ const table = [
 	"Og", "Oganesson", "(294)", 18, 7, "240,255,240",
 ];
 
-var camera, scene, renderer;
-var controls;
+const camera, scene, renderer;
+const controls;
 
 var objects = [];
 var targets = { table: [] };
