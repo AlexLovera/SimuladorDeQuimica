@@ -139,75 +139,21 @@ var camera, scene, renderer;
 var controls;
 
 var objects = [];
-var targets = { table: [] };
-var objetoEnTable = [];
+var targets = { table: [],esfera:[],simple:[]};
 
 init();
 animate();
-
-
-function elementClickHandler(i) {
-
-	transform(targets.table, 1000);
-
-	new TWEEN.Tween(objetoEnTable[i / 6].position).to({ x: 0, y: 0, z: 2500 }, Math.random() * 2000 + 2000).easing(TWEEN.Easing.Exponential.InOut).start();
-
-	new TWEEN.Tween(this).to({}, 2000 * 2).onUpdate(render).start();
-}
 
 function init() {
 
 	camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 10000);
 	camera.position.z = 2800;
-	//camera.clone
+
 	scene = new THREE.Scene();
 
-	// table
-
-	for (var i = 0; i < table.length; i += 6) {
-
-		var element = document.createElement('div');
-		element.className = 'element';
-		element.style.backgroundColor = "rgba(" + table[i + 5] + (Math.random() * 0.5 + 0.25) + ')';
-		//0,234,255
-		var number = document.createElement('div');
-		number.className = 'number';
-		number.textContent = (i / 5) + 1;
-		element.appendChild(number);
-
-		var symbol = document.createElement('div');
-		symbol.className = 'symbol';
-		symbol.textContent = table[i];
-		element.appendChild(symbol);
-
-		var details = document.createElement('div');
-		details.className = 'details';
-		details.innerHTML = table[i + 1] + '<br>' + table[i + 2];
-		element.appendChild(details);
-		//A element se le agrega el numero, simbolo y detalles
-		//Despues se agrega el elemento a un CSS3DObject
-		element.addEventListener('click', () => elementClickHandler(i), false);//////////////////////////////
-		var object = new CSS3DObject(element);
-		object.position.x = Math.random() * 10 - 2000;//Posicion desde donde arranca??
-		object.position.y = Math.random() * 10 - 2000;
-		object.position.z = Math.random() * 10 - 2000;
-		scene.add(object);
-
-		objects.push(object);
-
-		//
-
-		var object = new THREE.Object3D();
-		object.position.x = (table[i + 3] * 130) - 1330;//posicion de array, como matriz... Num de fila
-		object.position.y = - (table[i + 4] * 180) + 990;//Num de columna
-
-		targets.table.push(object);
-		objetoEnTable.push(object);//esto voy a tener que usar para los eventos
-
-	}
-
-	//
-
+	crearObjetoCSS3D();
+	//generateGeometricLayouts();
+		
 	renderer = new CSS3DRenderer();
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	document.getElementById('container').appendChild(renderer.domElement);
@@ -223,29 +169,80 @@ function init() {
 	var button = document.getElementById('table');
 	button.addEventListener('click', function () {
 
-		//transform(targets.table, 2000);
-		transform(objetoEnTable, 2000);
+		transform(targets.table, 2000);
 	}, false);
 
-
-	transform(objetoEnTable, 2000);
+	transform(targets.table, 2000);
+	//transform(objetoEnTable, 2000);
 
 	//
-
 	window.addEventListener('resize', onWindowResize, false);
-	//console.log(objetoEnTable);
 }
 
-function transform(objetoEnTable, duration) {
+function posicionarElementosEnTabla(table, index) {
 
-	TWEEN.removeAll();
+	let object = new THREE.Object3D();
+
+	object.position.x = (table[index + 3] * 140) - 1330;
+	object.position.y = -(table[index + 4] * 180) + 990;
+	targets.table.push(object);
+
+}
+
+function crearObjetoCSS3D() {
+
+	for (let i = 0; i < table.length; i += 6) {
+
+		let object = new CSS3DObject(crearElementoHTMLYSuEvento(table, i));
+		object.position.x = Math.random() * 10 - 2000;
+		object.position.y = Math.random() * 10 - 2000;
+		object.position.z = Math.random() * 10 - 2000;
+
+		scene.add(object);
+		objects.push(object);
+		targets.simple.push(object);
+		posicionarElementosEnTabla(table, i);
+
+	}
+}
+
+function crearElementoHTMLYSuEvento(table, i) {
+	let element = document.createElement('div');
+	element.className = 'element';
+	element.style.backgroundColor = 'rgba(' + table[i + 5] + (Math.random() * 0.5 + 0.25) + ')';
+
+	let number = document.createElement('div');
+	number.className = 'number';
+	number.textContent = (i / 5) + 1;
+	element.appendChild(number);
+
+	let symbol = document.createElement('div');
+	symbol.className = 'symbol';
+	symbol.textContent = table[i];
+	element.appendChild(symbol);
+
+	let details = document.createElement('div');
+	details.className = 'details';
+	details.innerHTML = table[i + 1] + '<br>' + table[i + 2];
+	element.appendChild(details);
+
+	//NUEVO MOVER MOUSE
+	//element.addEventListener('mousemove', onDocumentMouseMove, false);
+
+
+	return element;
+}
+
+
+function transform(targett, duration) {
+
+	//TWEEN.removeAll();
 
 	for (var i = 0; i < objects.length; i++) {
 
 		var object = objects[i];
-		var target = objetoEnTable[i];
-		//console.log(target);
-		//console.log(target.position.z);
+		var target = targett[i];
+
 		new TWEEN.Tween(object.position)
 			.to({ x: target.position.x, y: target.position.y, z: target.position.z }, Math.random() * duration + duration)
 			.easing(TWEEN.Easing.Back.Out)
@@ -290,4 +287,3 @@ function render() {
 	renderer.render(scene, camera);
 
 }
-
