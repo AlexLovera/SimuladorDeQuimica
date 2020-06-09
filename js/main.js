@@ -152,7 +152,7 @@ function init() {
 	scene = new THREE.Scene();
 
 	crearObjetoCSS3D();
-	//generateGeometricLayouts();
+	generarEsfera();
 		
 	renderer = new CSS3DRenderer();
 	renderer.setSize(window.innerWidth, window.innerHeight);
@@ -166,16 +166,16 @@ function init() {
 	controls.addEventListener('change', render);
 
 	//No se usa, pero sirve como ejemplo para poder usar el evento con el elemento.
-	var button = document.getElementById('table');
+	var button = document.getElementById('tabla');
 	button.addEventListener('click', function () {
 
 		transform(targets.table, 2000);
 	}, false);
-
+				   
 	transform(targets.table, 2000);
-	//transform(objetoEnTable, 2000);
 
 	//
+
 	window.addEventListener('resize', onWindowResize, false);
 }
 
@@ -225,7 +225,7 @@ function crearElementoHTMLYSuEvento(table, i) {
 	details.className = 'details';
 	details.innerHTML = table[i + 1] + '<br>' + table[i + 2];
 	element.appendChild(details);
-
+	
 	//NUEVO MOVER MOUSE
 	//element.addEventListener('mousemove', onDocumentMouseMove, false);
 
@@ -233,6 +233,31 @@ function crearElementoHTMLYSuEvento(table, i) {
 	return element;
 }
 
+
+function generarEsfera() {
+
+	let vectorDeEsfera = new THREE.Vector3();
+
+	for (let i = 0, length = targets.simple.length; i < length; i++) {
+		agregarObjetoAEsfera(vectorDeEsfera, i, length);
+	}
+}
+
+// acomoda la posicion por coordenadas esfericas y agrega a la lista
+function agregarObjetoAEsfera(vectorDeEsfera, indice, length) {
+
+	const phi = Math.acos(-1 + (2 * indice) / length);
+	const theta = Math.sqrt(length * Math.PI) * phi;
+	let object = new THREE.Object3D();
+
+	object.position.setFromSphericalCoords(1000, phi, theta);//800 r... dsde el centro
+
+	vectorDeEsfera.copy(object.position).multiplyScalar(2);
+
+	object.lookAt(vectorDeEsfera);
+
+	targets.esfera.push(object);
+}
 
 function transform(targett, duration) {
 
