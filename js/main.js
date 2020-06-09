@@ -221,14 +221,41 @@ function crearElementoHTMLYSuEvento(table, i) {
 	details.className = 'details';
 	details.innerHTML = table[i + 1] + '<br>' + table[i + 2];
 	element.appendChild(details);
-	
+
+	element.addEventListener('mouseover', () => elementClickHandler(i), false);//Agrego tween.removeall... para no cancelar lo de sphere
+	element.addEventListener('mouseout', () => elementMouseOutHandler(), false);
 	//NUEVO MOVER MOUSE
 	//element.addEventListener('mousemove', onDocumentMouseMove, false);
-
 
 	return element;
 }
 
+function elementClickHandler(i) {
+
+	TWEEN.removeAll();
+
+	transform(targets.table, 1000);
+
+	new TWEEN.Tween(targets.simple[i / 6].position)
+		.to({
+			z: 100//2500 para el centro... con x e y en 0
+		}, Math.random() * 2000 + 2000)
+		.easing(TWEEN.Easing.Exponential.InOut)
+		.start();
+
+	new TWEEN.Tween(this)
+		.to({}, 1000 * 2)
+		.onUpdate(render)
+		.start();
+}
+
+function elementMouseOutHandler() {
+
+	TWEEN.removeAll();
+
+	console.log("salio el mouse del elemento");
+	transform(targets.table, 300);
+}
 
 function generarEsfera() {
 
@@ -292,7 +319,6 @@ function agregarClickListennerABoton(target, elementId) {
 	}, false);
 
 }
-
 
 function transform(targett, duration) {
 
