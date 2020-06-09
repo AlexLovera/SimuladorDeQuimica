@@ -1,10 +1,10 @@
-	// JavaScript source code
+// JavaScript source code
 
 import * as THREE from '../build/three.module.js';
 
-import { TWEEN } from './jsm/libs/tween.module.min.js';
-import { TrackballControls } from './jsm/controls/TrackballControls.js';
-import { CSS3DRenderer, CSS3DObject } from './jsm/renderers/CSS3DRenderer.js';
+import { TWEEN } from '../jsm/libs/tween.module.min.js';
+import { TrackballControls } from '../jsm/controls/TrackballControls.js';
+import { CSS3DRenderer, CSS3DObject } from '../jsm/renderers/CSS3DRenderer.js';
 //alcanlinos-->"rgba(255,165,0",
 //alcalinoterreneos-->"rgba(255,215,0",
 //metales de transicion-->"rgba(255,105,180",
@@ -135,8 +135,8 @@ const table = [
 	"Og", "Oganesson", "(294)", 18, 7, "240,255,240",
 ];
 
-const camera, scene, renderer;
-const controls;
+var camera, scene, renderer;
+var controls;
 
 var objects = [];
 var targets = { table: [] };
