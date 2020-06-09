@@ -166,12 +166,8 @@ function init() {
 	controls.addEventListener('change', render);
 
 	//No se usa, pero sirve como ejemplo para poder usar el evento con el elemento.
-	var button = document.getElementById('tabla');
-	button.addEventListener('click', function () {
-
-		transform(targets.table, 2000);
-	}, false);
-				   
+	
+	agregarEventosDeClickABotones();
 	transform(targets.table, 2000);
 
 	//
@@ -258,6 +254,45 @@ function agregarObjetoAEsfera(vectorDeEsfera, indice, length) {
 
 	targets.esfera.push(object);
 }
+
+function agregarEventosDeClickABotones() {
+	agregarClickListennerABoton(targets.table, 'tabla');
+	agregarClickListennerABoton(targets.esfera, 'esfera');
+}
+
+function agregarClickListennerABoton(target, elementId) {
+
+	const button = document.getElementById(elementId);
+
+	button.addEventListener('click', function () {
+		if ('esfera' == elementId) {
+
+			console.log(camera.position.x);
+			console.log(camera.position.y);
+			console.log(camera.position.z);
+			transform(target, 2000);
+
+			var tweenE = new TWEEN.Tween(camera.position).to({
+				x: 0,
+				y: 0,
+				z: 100//2500 para el centro... con x e y en 0
+			}, 4000)
+				.easing(TWEEN.Easing.Exponential.InOut)
+				.start();
+
+            /*new TWEEN.Tween(this)
+                .to({}, 1000 * 2)
+                .onUpdate(render)
+                .start();*/
+
+			console.log(tweenE);
+			//transform(target, 2000);
+		}
+		transform(target, 2000);
+	}, false);
+
+}
+
 
 function transform(targett, duration) {
 
