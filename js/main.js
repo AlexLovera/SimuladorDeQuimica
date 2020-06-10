@@ -171,6 +171,8 @@ function init() {
 	scene = new THREE.Scene();
 
 	crearObjetoCSS3D();
+	targets.simple = targets.simple.splice(0, targets.simple.length);
+	console.log("Asignacion tardia", targets.simple);
 	//generarEsfera();
 
 	renderer = new CSS3DRenderer();
@@ -185,7 +187,8 @@ function init() {
 	controls.addEventListener('change', render);
 
 	//No se usa, pero sirve como ejemplo para poder usar el evento con el elemento.
-
+	//console.log("Array objects", objects);
+	console.log("Longitud de simple antes de transform", targets.simple.length);
 	agregarEventosDeClickABotones();
 	transform(targets.table, 2000);
 
@@ -199,7 +202,7 @@ function init() {
 function posicionarElementosEnTabla(elemento) {
 
 	let object = new THREE.Object3D();
-	console.log(typeof (elemento.xpos), elemento.xpos);
+	//console.log(typeof (elemento.xpos), elemento.xpos);
 	object.position.x = elemento.xpos;	  //1-18
 	object.position.y = -elemento.ypos;	  //1-7
 	targets.table.push(object);
@@ -219,16 +222,21 @@ function crearObjetoCSS3D() {
 				object.position.x = Math.random() * 10 - 2000;
 				object.position.y = Math.random() * 10 - 2000;
 				object.position.z = Math.random() * 10 - 2000;
-
+				//console.log(object);
 				scene.add(object);
-				objects.push(object);
+				//objects.push(object);
+				//console.log("Array objects",objects);
 				targets.simple.push(object);
 				posicionarElementosEnTabla(elemento[i]);
 			}
 		}
 	};
-	xhttp.open("GET", "datosDeElementos.json", true);
+	xhttp.open("GET", "datosDeElementos.json", false);
 	xhttp.send();
+	//console.log(scene);
+	console.log("tabla",targets.table);
+	//targets.simple = targets.simple.splice(0,targets.simple.length);
+
 	/*
 	for (let i = 0; i < table.length; i += 6) {
 
@@ -287,7 +295,7 @@ function elementMouseOverHandler(i) {
 	transform(targets.table, 1000);
 
 	// Adelanta el elemento hacia la camara
-	new TWEEN.Tween(targets.simple[i / 6].position)
+	new TWEEN.Tween(targets.simple[i].position)
 		.to({
 			z: 100
 		}, Math.random() * 2000 + 2000)
@@ -387,14 +395,18 @@ function agregarAnimacionALaCamara(posiscionDeLaCamara, posicionesFinales) {
 }
 
 function transform(targett, duration) {
-
 	//TWEEN.removeAll();
+	 /*
+	console.log("Array objects", objects);
+	console.log("Array simple", targets.simple);
+	console.log("Entra a transform");
+	console.log("Longitud de simple en transform", targets.simple.length);	  */
 
-	for (var i = 0; i < objects.length; i++) {
-
-		var object = objects[i];
+	for (var i = 0; i < targets.simple.length; i++) {
+		var object = targets.simple[i];
 		var target = targett[i];
-
+		//console.log(object.position);
+		//console.log(target.position);
 		new TWEEN.Tween(object.position)
 			.to({ x: target.position.x, y: target.position.y, z: target.position.z }, Math.random() * duration + duration)
 			.easing(TWEEN.Easing.Back.Out)
