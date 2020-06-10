@@ -173,7 +173,8 @@ function init() {
 	crearObjetoCSS3D();
 	targets.simple = targets.simple.splice(0, targets.simple.length);
 	console.log("Asignacion tardia", targets.simple);
-	//generarEsfera();
+
+	generarEsfera();
 
 	renderer = new CSS3DRenderer();
 	renderer.setSize(window.innerWidth, window.innerHeight);
@@ -187,8 +188,9 @@ function init() {
 	controls.addEventListener('change', render);
 
 	//No se usa, pero sirve como ejemplo para poder usar el evento con el elemento.
-	//console.log("Array objects", objects);
 	console.log("Longitud de simple antes de transform", targets.simple.length);
+	console.log("Longitud de table antes de transform", targets.table.length);
+
 	agregarEventosDeClickABotones();
 	transform(targets.table, 2000);
 
@@ -203,8 +205,8 @@ function posicionarElementosEnTabla(elemento) {
 
 	let object = new THREE.Object3D();
 	//console.log(typeof (elemento.xpos), elemento.xpos);
-	object.position.x = elemento.xpos;	  //1-18
-	object.position.y = -elemento.ypos;	  //1-7
+	object.position.x = elemento.xpos * 140 - 1330;	  //1-18
+	object.position.y = -elemento.ypos * 180 + 990;	  //1-7
 	targets.table.push(object);
 
 }
@@ -231,26 +233,11 @@ function crearObjetoCSS3D() {
 			}
 		}
 	};
-	xhttp.open("GET", "datosDeElementos.json", false);
+	xhttp.open("GET", "datosDeElementos.json", false);// false para que no sea asincrono
 	xhttp.send();
 	//console.log(scene);
 	console.log("tabla",targets.table);
 	//targets.simple = targets.simple.splice(0,targets.simple.length);
-
-	/*
-	for (let i = 0; i < table.length; i += 6) {
-
-		let object = new CSS3DObject(crearElementoHTMLYSuEvento(table, i));
-		object.position.x = Math.random() * 10 - 2000;
-		object.position.y = Math.random() * 10 - 2000;
-		object.position.z = Math.random() * 10 - 2000;
-
-		scene.add(object);
-		objects.push(object);
-		targets.simple.push(object);
-		posicionarElementosEnTabla(table, i);
-
-	}*/
 }
 
 function crearElementoHTMLYSuEvento(i, elemento) {
@@ -405,8 +392,7 @@ function transform(targett, duration) {
 	for (var i = 0; i < targets.simple.length; i++) {
 		var object = targets.simple[i];
 		var target = targett[i];
-		//console.log(object.position);
-		//console.log(target.position);
+
 		new TWEEN.Tween(object.position)
 			.to({ x: target.position.x, y: target.position.y, z: target.position.z }, Math.random() * duration + duration)
 			.easing(TWEEN.Easing.Back.Out)
