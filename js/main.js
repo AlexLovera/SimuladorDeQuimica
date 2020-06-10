@@ -235,6 +235,12 @@ function crearElementoHTMLYSuEvento(table, i) {
 	return element;
 }
 
+// Aca se tiene aplicar el modal
+function elementClickHandler() {
+	
+}
+
+// falta agregar la informacion
 function elementMouseOverHandler(i) {
 
 	TWEEN.removeAll();
@@ -294,7 +300,7 @@ function agregarEventosDeClickABotones() {
 	agregarClickListennerABoton(targets.esfera, 'esfera');
 }
 
-function agregarClickListennerABoton(target, elementId) {
+function agregarEventoDeClickABoton(target, elementId) {
 
 	const button = document.getElementById(elementId);
 
