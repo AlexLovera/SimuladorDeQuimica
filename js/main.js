@@ -296,8 +296,8 @@ function agregarObjetoAEsfera(vectorDeEsfera, indice, length) {
 }
 
 function agregarEventosDeClickABotones() {
-	agregarClickListennerABoton(targets.table, 'tabla');
-	agregarClickListennerABoton(targets.esfera, 'esfera');
+	agregarEventoDeClickABoton(targets.table, 'tabla');
+	agregarEventoDeClickABoton(targets.esfera, 'esfera');
 }
 
 function agregarEventoDeClickABoton(target, elementId) {
