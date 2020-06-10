@@ -245,12 +245,12 @@ function elementMouseOverHandler(i) {
 
 	TWEEN.removeAll();
 
-	transform(targets.table, 2000);
+	transform(targets.table, 1000);
 
 	// Adelanta el elemento hacia la camara
 	new TWEEN.Tween(targets.simple[i / 6].position)
 		.to({
-			z: 100//2500 para el centro... con x e y en 0
+			z: 100
 		}, Math.random() * 2000 + 2000)
 		.easing(TWEEN.Easing.Exponential.InOut)
 		.start();
@@ -266,7 +266,7 @@ function elementMouseOutHandler() {
 	TWEEN.removeAll();
 
 	console.log("salio el mouse del elemento");
-	transform(targets.table, 300);
+	transform(targets.table, 400);
 }
 
 function generarEsfera() {
