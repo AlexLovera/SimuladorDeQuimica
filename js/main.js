@@ -161,7 +161,7 @@ function init() {
 
 	crearObjetoCSS3D();
 	generarEsfera();
-		
+
 	renderer = new CSS3DRenderer();
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	document.getElementById('container').appendChild(renderer.domElement);
@@ -174,7 +174,7 @@ function init() {
 	controls.addEventListener('change', render);
 
 	//No se usa, pero sirve como ejemplo para poder usar el evento con el elemento.
-	
+
 	agregarEventosDeClickABotones();
 	transform(targets.table, 2000);
 
@@ -339,7 +339,7 @@ function agregarEventoDeClickABoton(target, elementId) {
 
 		} else {
 			agregarAnimacionALaCamara(camera.position, posicionInicialCamara);
-        }
+		}
 		transform(target, 2000);
 	}, false);
 
