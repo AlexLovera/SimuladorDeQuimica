@@ -227,7 +227,7 @@ function crearElementoHTMLYSuEvento(table, i) {
 	details.innerHTML = table[i + 1] + '<br>' + table[i + 2];
 	element.appendChild(details);
 
-	element.addEventListener('mouseover', () => elementClickHandler(i), false);//Agrego tween.removeall... para no cancelar lo de sphere
+	element.addEventListener('mouseover', () => elementMouseOverHandler(i), false);//Agrego tween.removeall... para no cancelar lo de sphere
 	element.addEventListener('mouseout', () => elementMouseOutHandler(), false);
 	//NUEVO MOVER MOUSE
 	//element.addEventListener('mousemove', onDocumentMouseMove, false);
@@ -235,7 +235,7 @@ function crearElementoHTMLYSuEvento(table, i) {
 	return element;
 }
 
-function elementClickHandler(i) {
+function elementMouseOverHandler(i) {
 
 	TWEEN.removeAll();
 
@@ -309,21 +309,6 @@ function agregarClickListennerABoton(target, elementId) {
 			}
 			agregarAnimacionALaCamara(camera.position, centroDeLaEsfera);
 
-			/*var tweenE = new TWEEN.Tween(camera.position).to({
-				x: 0,
-				y: 0,
-				z: 100//2500 para el centro... con x e y en 0
-			}, 4000)
-				.easing(TWEEN.Easing.Exponential.InOut)
-				.start();
-						  
-            /*new TWEEN.Tween(this)
-                .to({}, 1000 * 2)
-                .onUpdate(render)
-                .start();	*/
-
-			//console.log(tweenE); 
-			//transform(target, 2000);
 		} else {
 			agregarAnimacionALaCamara(camera.position, posicionInicialCamara);
         }
