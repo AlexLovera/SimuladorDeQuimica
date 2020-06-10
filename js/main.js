@@ -147,6 +147,7 @@ animate();
 function init() {
 
 	camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 10000);
+
 	camera.position.z = 2800;
 
 	scene = new THREE.Scene();
@@ -234,7 +235,7 @@ function elementClickHandler(i) {
 
 	TWEEN.removeAll();
 
-	transform(targets.table, 1000);
+	transform(targets.table, 2000);
 
 	new TWEEN.Tween(targets.simple[i / 6].position)
 		.to({
@@ -295,29 +296,43 @@ function agregarClickListennerABoton(target, elementId) {
 	button.addEventListener('click', function () {
 		if ('esfera' == elementId) {
 
-			transform(target, 2000);
+			//transform(target, 2000);
+			var centroDeLaEsfera = {
+				x: 0,
+				y: 0,
+				z: 100
+			}
+			agregarAnimacionALaCamara(camera.position, centroDeLaEsfera);
 
-			var tweenE = new TWEEN.Tween(camera.position).to({
+			/*var tweenE = new TWEEN.Tween(camera.position).to({
 				x: 0,
 				y: 0,
 				z: 100//2500 para el centro... con x e y en 0
 			}, 4000)
 				.easing(TWEEN.Easing.Exponential.InOut)
 				.start();
-
+						  
             /*new TWEEN.Tween(this)
                 .to({}, 1000 * 2)
                 .onUpdate(render)
-                .start();*/
+                .start();	*/
 
-			console.log(tweenE);
+			//console.log(tweenE); 
 			//transform(target, 2000);
-		}
+		} else {
+			agregarAnimacionALaCamara
+        }
 		transform(target, 2000);
 	}, false);
 
 }
-
+function agregarAnimacionALaCamara(posiscionDeLaCamara, posicionesFinales) {
+	new TWEEN.Tween(posiscionDeLaCamara).to(
+		posicionesFinales
+		, 4000)
+		.easing(TWEEN.Easing.Exponential.InOut)
+		.start();
+}
 function transform(targett, duration) {
 
 	//TWEEN.removeAll();
