@@ -273,7 +273,8 @@ function agregarObjetoAEsfera(vectorDeEsfera, indice, length) {
 	const theta = Math.sqrt(length * Math.PI) * phi;
 	let object = new THREE.Object3D();
 
-	object.position.setFromSphericalCoords(1000, phi, theta);//800 r... dsde el centro
+	object.position.setFromSphericalCoords(1000, phi, theta);//1000 r... dsde el centro, con 1000 queda la separacion justa
+
 
 	vectorDeEsfera.copy(object.position).multiplyScalar(2);
 
@@ -294,9 +295,6 @@ function agregarClickListennerABoton(target, elementId) {
 	button.addEventListener('click', function () {
 		if ('esfera' == elementId) {
 
-			console.log(camera.position.x);
-			console.log(camera.position.y);
-			console.log(camera.position.z);
 			transform(target, 2000);
 
 			var tweenE = new TWEEN.Tween(camera.position).to({
@@ -356,7 +354,6 @@ function onWindowResize() {
 	renderer.setSize(window.innerWidth, window.innerHeight);
 
 	render();
-
 }
 
 function animate() {
