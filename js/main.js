@@ -10,7 +10,7 @@ import { CSS3DRenderer, CSS3DObject } from '../jsm/renderers/CSS3DRenderer.js';
 //metales de transicion-->"rgba(255,105,180",
 //lantanidos-->"rgba(245,222,179",
 //actinidos-->"rgba(255,0,255",
-//metales de bloque p-->"rgba("0,145,155",
+//metales de bloque p-->"rgba(0,145,155",
 //no metales-->"rgba(0,255,127",
 //gases nobles-->"rgba(127,255,212",
 //no se "rgba(240,255,240",
@@ -135,6 +135,17 @@ const table = [
 	"Og", "Oganesson", "(294)", 18, 7, "240,255,240",
 ];
 
+const coloresPorCategoriaDelElemento = {
+	"diatomic nonmetal": "rgba(0,255,127,0.75)",
+	"noble gas": "rgba(127,255,212,0.75)",
+	"alkali metal": "rgba(255,165,0,0.75)",
+	"alkaline earth metal": "rgba(255,215,0,0.75)",
+	"metalloid": "rgba(255,0,255,0.75)",
+	"polyatomic nonmetal": "rgba(245,222,179,0.75)",
+	"post-transition metal": "rgba(0, 145, 155, 0.75)",
+	"transition metal": "rgba(255,105,180,0.75)",
+}
+
 var camera, scene, renderer;
 var controls;
 const posicionInicialCamara = {
@@ -147,7 +158,7 @@ const modal = document.querySelector('#my-modal');
 const closeBtn = document.querySelector('.close');
 
 var objects = [];
-var targets = { table: [],esfera:[],simple:[]};
+var targets = { table: [], esfera: [], simple: [] };
 
 init();
 animate();
@@ -160,7 +171,7 @@ function init() {
 	scene = new THREE.Scene();
 
 	crearObjetoCSS3D();
-	generarEsfera();
+	//generarEsfera();
 
 	renderer = new CSS3DRenderer();
 	renderer.setSize(window.innerWidth, window.innerHeight);
@@ -185,18 +196,40 @@ function init() {
 	window.addEventListener('resize', onWindowResize, false);
 }
 
-function posicionarElementosEnTabla(table, index) {
+function posicionarElementosEnTabla(elemento) {
 
 	let object = new THREE.Object3D();
-
-	object.position.x = (table[index + 3] * 140) - 1330;
-	object.position.y = -(table[index + 4] * 180) + 990;
+	console.log(typeof (elemento.xpos), elemento.xpos);
+	object.position.x = elemento.xpos;	  //1-18
+	object.position.y = -elemento.ypos;	  //1-7
 	targets.table.push(object);
 
 }
 
 function crearObjetoCSS3D() {
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200) {
+			var respuesta = JSON.parse(xhttp.responseText);
+			var elemento = respuesta.elements;
 
+			for (var i = 0; i < elemento.length; i++) {
+
+				let object = new CSS3DObject(crearElementoHTMLYSuEvento(i, elemento[i]));
+				object.position.x = Math.random() * 10 - 2000;
+				object.position.y = Math.random() * 10 - 2000;
+				object.position.z = Math.random() * 10 - 2000;
+
+				scene.add(object);
+				objects.push(object);
+				targets.simple.push(object);
+				posicionarElementosEnTabla(elemento[i]);
+			}
+		}
+	};
+	xhttp.open("GET", "datosDeElementos.json", true);
+	xhttp.send();
+	/*
 	for (let i = 0; i < table.length; i += 6) {
 
 		let object = new CSS3DObject(crearElementoHTMLYSuEvento(table, i));
@@ -209,13 +242,13 @@ function crearObjetoCSS3D() {
 		targets.simple.push(object);
 		posicionarElementosEnTabla(table, i);
 
-	}
+	}*/
 }
 
-function crearElementoHTMLYSuEvento(table, i) {
+function crearElementoHTMLYSuEvento(i, elemento) {
 	let element = document.createElement('div');
 	element.className = 'element';
-	element.style.backgroundColor = 'rgba(' + table[i + 5] + (Math.random() * 0.5 + 0.25) + ')';
+	element.style.backgroundColor = coloresPorCategoriaDelElemento[elemento.category];
 
 	let number = document.createElement('div');
 	number.className = 'number';
@@ -224,12 +257,12 @@ function crearElementoHTMLYSuEvento(table, i) {
 
 	let symbol = document.createElement('div');
 	symbol.className = 'symbol';
-	symbol.textContent = table[i];
+	symbol.textContent = elemento.symbol;
 	element.appendChild(symbol);
 
 	let details = document.createElement('div');
 	details.className = 'details';
-	details.innerHTML = table[i + 1] + '<br>' + table[i + 2];
+	details.innerHTML = elemento.name + '<br>' + elemento.atomic_mass;
 	element.appendChild(details);
 
 	element.addEventListener('mouseover', () => elementMouseOverHandler(i), false);//Agrego tween.removeall... para no cancelar lo de sphere
