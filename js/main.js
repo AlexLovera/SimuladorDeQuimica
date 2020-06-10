@@ -143,6 +143,9 @@ const posicionInicialCamara = {
 	z: 2800
 }
 
+const modal = document.querySelector('#my-modal');
+const closeBtn = document.querySelector('.close');
+
 var objects = [];
 var targets = { table: [],esfera:[],simple:[]};
 
@@ -176,7 +179,9 @@ function init() {
 	transform(targets.table, 2000);
 
 	//
+	closeBtn.addEventListener('click', cerrarModal);
 
+	window.addEventListener('click', sacarModalPorClickAfuera);	 // PARA MODAL
 	window.addEventListener('resize', onWindowResize, false);
 }
 
@@ -229,6 +234,7 @@ function crearElementoHTMLYSuEvento(table, i) {
 
 	element.addEventListener('mouseover', () => elementMouseOverHandler(i), false);//Agrego tween.removeall... para no cancelar lo de sphere
 	element.addEventListener('mouseout', () => elementMouseOutHandler(), false);
+	element.addEventListener('click', () => elementClickHandler(), false);
 	//NUEVO MOVER MOUSE
 	//element.addEventListener('mousemove', onDocumentMouseMove, false);
 
@@ -237,7 +243,7 @@ function crearElementoHTMLYSuEvento(table, i) {
 
 // Aca se tiene aplicar el modal
 function elementClickHandler() {
-	
+	abrirModal();
 }
 
 // falta agregar la informacion
@@ -259,6 +265,22 @@ function elementMouseOverHandler(i) {
 		.to({}, 1000 * 2)
 		.onUpdate(render)
 		.start();
+}
+
+function abrirModal() {
+	modal.style.display = 'block';
+}
+
+// cierra el modal
+function cerrarModal() {
+	modal.style.display = 'none';
+}
+
+// cierra el modal si se clickea afuera
+function sacarModalPorClickAfuera(e) {
+	if (e.target == modal) {
+		modal.style.display = 'none';
+	}
 }
 
 function elementMouseOutHandler() {
