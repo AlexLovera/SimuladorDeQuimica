@@ -144,6 +144,8 @@ const coloresPorCategoriaDelElemento = {
 	"polyatomic nonmetal": "rgba(245,222,179,0.75)",
 	"post-transition metal": "rgba(0, 145, 155, 0.75)",
 	"transition metal": "rgba(255,105,180,0.75)",
+	"actinide": "rgba(255,105,100,0.75)",
+	"lanthanide":"rgba(100,80,100,0.75)"
 }
 
 var camera, scene, renderer;
