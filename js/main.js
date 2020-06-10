@@ -137,6 +137,11 @@ const table = [
 
 var camera, scene, renderer;
 var controls;
+const posicionInicialCamara = {
+	x: 0,
+	y: 0,
+	z: 2800
+}
 
 var objects = [];
 var targets = { table: [],esfera:[],simple:[]};
@@ -147,8 +152,7 @@ animate();
 function init() {
 
 	camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 10000);
-
-	camera.position.z = 2800;
+	camera.position.z = posicionInicialCamara["z"];
 
 	scene = new THREE.Scene();
 
@@ -237,6 +241,7 @@ function elementClickHandler(i) {
 
 	transform(targets.table, 2000);
 
+	// Adelanta el elemento hacia la camara
 	new TWEEN.Tween(targets.simple[i / 6].position)
 		.to({
 			z: 100//2500 para el centro... con x e y en 0
@@ -320,12 +325,13 @@ function agregarClickListennerABoton(target, elementId) {
 			//console.log(tweenE); 
 			//transform(target, 2000);
 		} else {
-			agregarAnimacionALaCamara
+			agregarAnimacionALaCamara(camera.position, posicionInicialCamara);
         }
 		transform(target, 2000);
 	}, false);
 
 }
+
 function agregarAnimacionALaCamara(posiscionDeLaCamara, posicionesFinales) {
 	new TWEEN.Tween(posiscionDeLaCamara).to(
 		posicionesFinales
@@ -333,6 +339,7 @@ function agregarAnimacionALaCamara(posiscionDeLaCamara, posicionesFinales) {
 		.easing(TWEEN.Easing.Exponential.InOut)
 		.start();
 }
+
 function transform(targett, duration) {
 
 	//TWEEN.removeAll();
