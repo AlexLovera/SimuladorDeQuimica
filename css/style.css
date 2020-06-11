@@ -74,8 +74,8 @@ button {
     }
 
 :root {
-    --modal-duration: 1s;
-    --modal-color: rgba(0, 0, 0, 0.17);
+    --modal-duration: 2s;
+    --modal-color: rgba(0,255,255,0.75);
 }
 
 .modal {
@@ -113,7 +113,7 @@ button {
 
 .modal-body {
     padding: 10px 20px;
-    background: #fff;
+    background: rgba(127,255,255,0.75);
 }
 
 .modal-footer {
