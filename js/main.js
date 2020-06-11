@@ -262,6 +262,7 @@ function crearElementoHTMLYSuEvento(i, elemento) {
 	symbol.className = 'symbol';
 
 	symbol.style.color = colorPorEstadoDelElemento[elemento.phase];
+	symbol.style.textShadow = "0 0 15px " + colorPorEstadoDelElemento[elemento.phase];
 
 	symbol.textContent = elemento.symbol;
 	element.appendChild(symbol);
