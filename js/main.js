@@ -144,8 +144,14 @@ const coloresPorCategoriaDelElemento = {
 	"polyatomic nonmetal": "rgba(245,222,179,0.75)",
 	"post-transition metal": "rgba(0, 145, 155, 0.75)",
 	"transition metal": "rgba(255,105,180,0.75)",
-	"actinide": "rgba(255,105,100,0.75)",
-	"lanthanide":"rgba(100,80,100,0.75)"
+	"actinide": "rgba(255,150,100,0.75)",
+	"lanthanide":"rgba(100,20,100,0.75)"
+}
+
+const colorPorEstadoDelElemento = {
+	"Solid": "rgba(255, 255, 255, 0.60)",  //   "rgba(0, 255, 13, 0.75)
+	"Liquid":"rgba(6, 192, 243, 0.60)",
+	"Gas":"rgba(255, 3, 3, 0.60)"
 }
 
 var camera, scene, renderer;
@@ -254,6 +260,9 @@ function crearElementoHTMLYSuEvento(i, elemento) {
 
 	let symbol = document.createElement('div');
 	symbol.className = 'symbol';
+
+	symbol.style.color = colorPorEstadoDelElemento[elemento.phase];
+
 	symbol.textContent = elemento.symbol;
 	element.appendChild(symbol);
 
