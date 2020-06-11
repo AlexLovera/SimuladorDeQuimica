@@ -187,13 +187,16 @@ function agregarDatosAModal(i,elemento) {
 	// pedir informacion desde el objeto
 	//console.log(targets.simple[i].element.getElementsByClassName("symbol")[0].textContent);
 	// o pasar datos directamente del json
-	console.log("categoria del elemento", elemento.category);
 
-	var modalBody = document.getElementsByClassName("modal-body"); // clase
-	var parrafoFijo = modalBody[0].getElementsByTagName("p")[0];
-	parrafoFijo.textContent = `
-		Configuracion electronica: ${elemento.electron_configuration}`;
-	console.log(parrafoFijo);
+	var parrafoConfiguracionElectronica = document.getElementById("configuracion-electronica");
+	parrafoConfiguracionElectronica.textContent = `Configuracion electronica: ${elemento.electron_configuration}`;
+	var parrafoInfoResumida = document.getElementById("informacion-resumida");
+	parrafoInfoResumida.textContent = `Resumen de elemento: ${elemento.summary}`;
+	var parrafoDensidad = document.getElementById("densidad");
+	parrafoDensidad.textContent = `Densidad del elemento: ${elemento.density}`;
+
+	document.getElementById('link-wikipedia').setAttribute('href',elemento.source);
+
 }
 
 // cierra el modal
