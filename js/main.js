@@ -145,7 +145,7 @@ function crearElementoHTMLYSuEvento(i, elemento) {
 
 	element.addEventListener('mouseover', () => elementMouseOverHandler(i), false);//Agrego tween.removeall... para no cancelar lo de sphere
 	element.addEventListener('mouseout', () => elementMouseOutHandler(), false);
-	element.addEventListener('click', () => elementClickHandler(), false);
+	element.addEventListener('click', () => elementClickHandler(i,elemento), false);
 	//NUEVO MOVER MOUSE
 	//element.addEventListener('mousemove', onDocumentMouseMove, false);
 
@@ -153,8 +153,8 @@ function crearElementoHTMLYSuEvento(i, elemento) {
 }
 
 // Aca se tiene aplicar el modal
-function elementClickHandler() {
-	abrirModal();
+function elementClickHandler(i,elemento) {
+	abrirModal(i,elemento);
 }
 
 // falta agregar la informacion
@@ -178,8 +178,27 @@ function elementMouseOverHandler(i) {
 		.start();
 }
 
-function abrirModal() {
+function abrirModal(i,elemento) {
 	modal.style.display = 'block';
+	agregarDatosAModal(i,elemento);
+}
+
+function agregarDatosAModal(i,elemento) {
+	// pedir informacion desde el objeto
+	//console.log(targets.simple[i].element.getElementsByClassName("symbol")[0].textContent);
+	// o pasar datos directamente del json
+	console.log("categoria del elemento", elemento.category);
+	var holaa = "hola";
+	var modalBody = document.getElementsByClassName("modal-body"); // clase 
+	var parrafoDeInformacionDelElemento = document.createElement("p");		// crea elemento
+	var informacionDelElemento = document.createTextNode(`Configuracion electronica:\t${elemento.electron_configuration}\n
+
+	`);	  // crea texto
+	parrafoDeInformacionDelElemento.appendChild(informacionDelElemento);
+	modalBody[0].appendChild(parrafoDeInformacionDelElemento);
+
+	//console.log("nuevo parrafo: ", parrafoDeInformacionDelElemento);
+	//console.log(modalBody);
 }
 
 // cierra el modal
