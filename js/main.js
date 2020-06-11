@@ -219,9 +219,10 @@ function agregarObjetoAEsfera(vectorDeEsfera, indice, length) {
 	let object = new THREE.Object3D();
 
 	object.position.setFromSphericalCoords(1000, phi, theta);//1000 r... dsde el centro, con 1000 queda la separacion justa
-
+	object.rotation.y = Math.PI;
 
 	vectorDeEsfera.copy(object.position).multiplyScalar(2);
+	vectorDeEsfera.copy(object.rotation).multiplyScalar(2);
 
 	object.lookAt(vectorDeEsfera);
 
