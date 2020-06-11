@@ -136,21 +136,21 @@ const table = [
 ];
 
 const coloresPorCategoriaDelElemento = {
-	"diatomic nonmetal": "rgba(0,255,127,0.75)",
-	"noble gas": "rgba(127,255,212,0.75)",
-	"alkali metal": "rgba(255,165,0,0.75)",
-	"alkaline earth metal": "rgba(255,215,0,0.75)",
-	"metalloid": "rgba(255,0,255,0.75)",
-	"polyatomic nonmetal": "rgba(245,222,179,0.75)",
-	"post-transition metal": "rgba(0, 145, 155, 0.75)",
-	"transition metal": "rgba(255,105,180,0.75)",
-	"actinide": "rgba(255,150,100,0.75)",
-	"lanthanide":"rgba(100,20,100,0.75)"
+	"diatomic nonmetal": "rgba(0,255,127,0.90)",	// 0.75 para que se vea mas tranqui
+	"noble gas": "rgba(127,255,212,0.90)",
+	"alkali metal": "rgba(255,165,0,0.90)",
+	"alkaline earth metal": "rgba(255,215,0,0.90)",
+	"metalloid": "rgba(255,0,255,0.90)",
+	"polyatomic nonmetal": "rgba(245,222,179,0.90)",
+	"post-transition metal": "rgba(0, 145, 155, 0.90)",
+	"transition metal": "rgba(255,105,180,0.90)",
+	"actinide": "rgba(255,150,100,0.90)",
+	"lanthanide":"rgba(100,20,100,0.90)"
 }
 
 const colorPorEstadoDelElemento = {
 	"Solid": "rgba(255, 255, 255, 0.60)",  //   "rgba(0, 255, 13, 0.75)
-	"Liquid":"rgba(6, 192, 243, 0.60)",
+	"Liquid":"rgba(229, 255, 0, 0.60)",
 	"Gas":"rgba(255, 3, 3, 0.60)"
 }
 
