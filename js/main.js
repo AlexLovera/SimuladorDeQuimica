@@ -269,6 +269,7 @@ function agregarEventoDeClickABoton(target, elementId) {
 		} else {
 			agregarAnimacionALaCamara(camera.position, posicionInicialCamara);
 		}
+		controls.reset(); // estado original centrado, function de trallbackcontrol 
 		transform(target, 2000);
 	}, false);
 
