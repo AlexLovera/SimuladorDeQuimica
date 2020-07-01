@@ -79,6 +79,7 @@ button {
 }
 
 .modal {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: none;
     position: fixed;
     z-index: 1;
@@ -147,4 +148,26 @@ button {
     to {
         opacity: 1;
     }
+}
+
+.izquierda {
+    float: left;
+    width:73%;
+    position:relative;
+    display:block;
+}
+
+.derecha {
+    float: right;
+    width: 24%;
+    position: relative;
+    display: block;
+}
+
+.clear {
+    clear: both;
+}
+
+#informacion-resumida, #densidad {
+    padding: 0 0 5px 0;
 }
