@@ -188,12 +188,16 @@ function agregarDatosAModal(i,elemento) {
 	//console.log(targets.simple[i].element.getElementsByClassName("symbol")[0].textContent);
 	// o pasar datos directamente del json
 
+	// cambio de textContent a innerHTML para negrita, ver problema...
 	var parrafoConfiguracionElectronica = document.getElementById("configuracion-electronica");
-	parrafoConfiguracionElectronica.textContent = `Configuracion electronica: ${elemento.electron_configuration}`;
+	//parrafoConfiguracionElectronica.textContent = `Configuracion electronica: ${elemento.electron_configuration}`;
+	parrafoConfiguracionElectronica.innerHTML = `<strong>Configuracion electronica:</strong> ${elemento.electron_configuration}`;
+
 	var parrafoInfoResumida = document.getElementById("informacion-resumida");
-	parrafoInfoResumida.textContent = `Resumen de elemento: ${elemento.summary}`;
+	parrafoInfoResumida.innerHTML = `<strong>Resumen de elemento:</strong> ${elemento.summary}`;
+
 	var parrafoDensidad = document.getElementById("densidad");
-	parrafoDensidad.textContent = `Densidad del elemento: ${elemento.density}`;
+	parrafoDensidad.innerHTML = `<strong>Densidad del elemento:</strong> ${elemento.density}`;
 
 	document.getElementById('link-wikipedia').setAttribute('href',elemento.source);
 
