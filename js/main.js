@@ -190,10 +190,13 @@ function agregarDatosAModal(i,elemento) {
 
 	// cambio de textContent a innerHTML para negrita, ver problema...
 	var parrafoConfiguracionElectronica = document.getElementById("configuracion-electronica");
+	//parrafoConfiguracionElectronica.style.textAlign = 'right';
 	//parrafoConfiguracionElectronica.textContent = `Configuracion electronica: ${elemento.electron_configuration}`;
-	parrafoConfiguracionElectronica.innerHTML = `<strong>Configuracion electronica:</strong> ${elemento.electron_configuration}`;
+	var configElectronicaExterna = manejarStringConfigElectronicaExterna(elemento.electron_configuration);
+	parrafoConfiguracionElectronica.innerHTML = `<strong>Configuracion electronica:</strong> ${configElectronicaExterna}`;
 
 	var parrafoInfoResumida = document.getElementById("informacion-resumida");
+	//parrafoInfoResumida.style.verticalAlign = 'top';
 	parrafoInfoResumida.innerHTML = `<strong>Resumen de elemento:</strong> ${elemento.summary}`;
 
 	var parrafoDensidad = document.getElementById("densidad");
@@ -202,6 +205,23 @@ function agregarDatosAModal(i,elemento) {
 	document.getElementById('link-wikipedia').setAttribute('href',elemento.source);
 
 }
+
+function manejarStringConfigElectronicaExterna(configElectronica) {
+	var indiceDeLinea = 1;
+	var configElectronicaExterna ="<br>";
+	var listaDeAlgo = configElectronica.split(" ");
+	for (let subString of listaDeAlgo) {	
+		if (indiceDeLinea == subString[0]) {
+			configElectronicaExterna += `${subString} `;
+		} else {
+			configElectronicaExterna += `<br>${subString} `;
+			indiceDeLinea++;
+        }		 
+    }	
+
+	return configElectronicaExterna;
+}
+
 
 // cierra el modal
 function cerrarModal() {
