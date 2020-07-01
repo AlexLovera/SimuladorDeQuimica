@@ -105,8 +105,8 @@ button {
 
 .modal-header {
     background: var(--modal-color);
-    padding: 15px;
-    color: #fff;
+    padding: 8px;
+    color: rgba(0,0,0,0.75);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -120,7 +120,7 @@ button {
     background: var(--modal-color);
     padding: 10px;
     color: #fff;
-    text-align: center;
+    text-align: right;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
