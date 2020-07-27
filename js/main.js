@@ -143,6 +143,16 @@ function crearElementoHTMLYSuEvento(i, elemento) {
 	//"numero atomico(Z)=protones+=electrones-/(ya que no tienen cargas, siendo neutros)";
 	element.appendChild(number);   // numero atomico... protones
 
+	/*
+	 * 	nuevo
+	 * */
+	let electroNegatividad = document.createElement('div');
+	electroNegatividad.className = 'electro_negatividad';
+	electroNegatividad.textContent = elemento.electronegativity_pauling;
+	electroNegatividad.title = "electro negatividad pauling";
+	element.appendChild(electroNegatividad);   // numero atomico... protones
+
+
 	let symbol = document.createElement('div');
 	symbol.className = 'symbol';
 	symbol.title = 'simbolo';
@@ -230,6 +240,9 @@ function agregarDatosAModal(i,elemento) {
 
 	var parrafoInfoResumida = document.getElementById("informacion-resumida");
 	parrafoInfoResumida.innerHTML = `<strong>Resumen de elemento:</strong> ${elemento.summary}`;
+
+	var electroNegatividad = document.getElementById("electro-negatividad");
+	electroNegatividad.innerHTML = `<strong>Electro negatividad:</strong> ${elemento.electronegativity_pauling}`;
 
 	var parrafoDensidad = document.getElementById("densidad");
 	parrafoDensidad.innerHTML = `<strong>Densidad del elemento:</strong> ${elemento.density}`;
