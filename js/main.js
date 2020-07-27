@@ -63,6 +63,8 @@ function init() {
 	scene = new THREE.Scene();
 
 	crearObjetoCSS3D();
+	crearGrupo();
+	crearPeriodo();
 	targets.simple = targets.simple.splice(0, targets.simple.length);
 	console.log("Asignacion tardia", targets.simple);
 
@@ -101,6 +103,58 @@ function posicionarElementosEnTabla(elemento) {
 	object.position.y = -elemento.ypos * 180 + 990;	  //1-7
 	targets.table.push(object);
 
+}
+function crearGrupo() {
+	var posicionesEnXGrupo = [0,0, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 0];
+	for (let i = 1; i <= 18; i++) {
+		let grupo = document.createElement('div');
+		grupo.className = 'grupo-periodo';
+		grupo.style.height = "10px";
+
+		let numeroGP = document.createElement('div');
+		numeroGP.className = 'numeroGP';
+		numeroGP.title = 'Grupo';
+		numeroGP.textContent = i;
+		grupo.appendChild(numeroGP);
+
+		let object = new CSS3DObject(grupo);
+		object.position.x = Math.random() * 10 - 2000;
+		object.position.y = Math.random() * 10 - 2000;
+		object.position.z = Math.random() * 10 - 2000;
+		scene.add(object);;
+		targets.simple.push(object);
+
+		let objectb = new THREE.Object3D();
+		objectb.position.x = i * 140 - 1330;	  //1-18
+		objectb.position.y = -posicionesEnXGrupo[i] * 180 + 990;	  //1-7
+		targets.table.push(objectb);
+    }
+}
+
+function crearPeriodo() {
+	for (let i = 1; i <= 8; i++) {
+		let periodo = document.createElement('div');
+		periodo.className = 'grupo-periodo';
+		periodo.style.width = '60px';
+
+		let numeroGP = document.createElement('div');
+		numeroGP.className = 'numeroGP';
+		numeroGP.title = 'Periodo';
+		numeroGP.textContent = i;
+		periodo.appendChild(numeroGP);
+
+		let object = new CSS3DObject(periodo);
+		object.position.x = Math.random() * 10 - 2000;
+		object.position.y = Math.random() * 10 - 2000;
+		object.position.z = Math.random() * 10 - 2000;
+		scene.add(object);;
+		targets.simple.push(object);
+
+		let objectb = new THREE.Object3D();
+		objectb.position.x = 0 * 140 - 1330;	  //1-18
+		objectb.position.y = -i * 180 + 990;	  //1-7
+		targets.table.push(objectb);
+	}
 }
 
 function crearObjetoCSS3D() {
