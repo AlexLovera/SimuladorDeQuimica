@@ -18,6 +18,18 @@ const coloresPorCategoriaDelElemento = {
 	"actinide": "rgba(255,150,100,0.90)",
 	"lanthanide":"rgba(100,20,100,0.90)"
 }
+/*	
+1-no metales
+2-gases nobles
+3-metales alcalinos
+4-metales alcalinoterreos
+5-metaloides
+6-halogenos
+7-metales postransicionales
+8-metales de transicion
+9-actinidos
+10-lantanidos
+*/
 
 const colorPorEstadoDelElemento = {
 	"Solid": "rgba(255, 255, 255, 0.60)",  //   "rgba(0, 255, 13, 0.75)
@@ -126,11 +138,14 @@ function crearElementoHTMLYSuEvento(i, elemento) {
 
 	let number = document.createElement('div');
 	number.className = 'number';
-	number.textContent = (i / 5) + 1;
-	element.appendChild(number);
+	number.textContent = i+1;
+	number.title = "numero atomico(Z)=protones+=electrones-";
+	//"numero atomico(Z)=protones+=electrones-/(ya que no tienen cargas, siendo neutros)";
+	element.appendChild(number);   // numero atomico... protones
 
 	let symbol = document.createElement('div');
 	symbol.className = 'symbol';
+	symbol.title = 'simbolo';
 
 	symbol.style.color = colorPorEstadoDelElemento[elemento.phase];
 	symbol.style.textShadow = "0 0 15px " + colorPorEstadoDelElemento[elemento.phase];
@@ -140,11 +155,12 @@ function crearElementoHTMLYSuEvento(i, elemento) {
 
 	let details = document.createElement('div');
 	details.className = 'details';
-	details.innerHTML = elemento.name + '<br>' + elemento.atomic_mass;
+	details.innerHTML = elemento.name + '<br>' + elemento.atomic_mass;// separarlo? muy junto
+	details.title = 'nombre\nmasa atomica';
 	element.appendChild(details);
 
-	element.addEventListener('mouseover', () => elementMouseOverHandler(i), false);//Agrego tween.removeall... para no cancelar lo de sphere
-	element.addEventListener('mouseout', () => elementMouseOutHandler(), false);
+	//element.addEventListener('mouseover', () => elementMouseOverHandler(i), false);//Agrego tween.removeall... para no cancelar lo de sphere
+	//element.addEventListener('mouseout', () => elementMouseOutHandler(), false);
 	element.addEventListener('click', () => elementClickHandler(i,elemento), false);
 	//NUEVO MOVER MOUSE
 	//element.addEventListener('mousemove', onDocumentMouseMove, false);
@@ -178,9 +194,10 @@ function elementMouseOverHandler(i) {
 		.start();
 }
 
-function abrirModal(i,elemento) {
+function abrirModal(i, elemento) {
 	modal.style.display = 'block';
-	agregarDatosAModal(i,elemento);
+	agregarDatosAModal(i, elemento);
+
 }
 
 function agregarDatosAModal(i,elemento) {
@@ -188,15 +205,13 @@ function agregarDatosAModal(i,elemento) {
 	//console.log(targets.simple[i].element.getElementsByClassName("symbol")[0].textContent);
 	// o pasar datos directamente del json
 
-	// cambio de textContent a innerHTML para negrita, ver problema...
+	// cambio de textContent a innerHTML para negrita, ver problema a
 	var parrafoConfiguracionElectronica = document.getElementById("configuracion-electronica");
-	//parrafoConfiguracionElectronica.style.textAlign = 'right';
 	//parrafoConfiguracionElectronica.textContent = `Configuracion electronica: ${elemento.electron_configuration}`;
 	var configElectronicaExterna = manejarStringConfigElectronicaExterna(elemento.electron_configuration);
 	parrafoConfiguracionElectronica.innerHTML = `<strong>Configuracion electronica:</strong> ${configElectronicaExterna}`;
 
 	var parrafoInfoResumida = document.getElementById("informacion-resumida");
-	//parrafoInfoResumida.style.verticalAlign = 'top';
 	parrafoInfoResumida.innerHTML = `<strong>Resumen de elemento:</strong> ${elemento.summary}`;
 
 	var parrafoDensidad = document.getElementById("densidad");
