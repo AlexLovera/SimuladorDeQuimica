@@ -195,6 +195,23 @@ function elementMouseOverHandler(i) {
 }
 
 function abrirModal(i, elemento) {
+	
+	transform(targets.table, 1000);
+
+	// Adelanta el elemento hacia la camara
+	new TWEEN.Tween(targets.simple[i].position)
+		.to({
+			x: 300,
+			y:20,
+			z: 2300
+		}, Math.random() * 1000 + 2000)		// importante 1000 + 2000
+		.easing(TWEEN.Easing.Exponential.InOut)
+		.start();
+
+	new TWEEN.Tween(this)
+		.to({}, 900 * 2)
+		.onUpdate(render)
+		.start();						  // para usar la config elec sin efectos
 	modal.style.display = 'block';
 	agregarDatosAModal(i, elemento);
 
