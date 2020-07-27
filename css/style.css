@@ -255,16 +255,20 @@ li{
 #estados {
     text-align: center;
     font-weight: 800;
+    background: rgba(30, 207, 196, 0.90);
 }
 
 #solido {
     color: rgba(255, 255, 255, 1);
+    background: rgba(30, 207, 196, 0.90);
 }
 
 #liquido {
-    color: rgba(229, 255, 0, 1)
+    color: rgba(229, 255, 0, 1);
+    background: rgba(30, 207, 196, 0.90);
 }
 
 #gas {
     color: rgba(255, 3, 3, 1);
+    background: rgba(30, 207, 196, 0.90);
 }
