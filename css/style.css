@@ -248,11 +248,9 @@ li{
     background: rgba(100,20,100,0.90);
 }
 
-/*para elementos sin referencia
-#metales-alcalinoterreos {
-    background: rgba(255,105,180,0.90);
+#categoria-desconocida {
+    background: rgba(112, 0, 255, 0.90);
 }
-    */
 
 #estados {
     text-align: center;
