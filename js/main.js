@@ -16,7 +16,8 @@ const coloresPorCategoriaDelElemento = {
 	"post-transition metal": "rgba(0, 145, 155, 0.90)",
 	"transition metal": "rgba(255,105,180,0.90)",
 	"actinide": "rgba(255,150,100,0.90)",
-	"lanthanide":"rgba(100,20,100,0.90)"
+	"lanthanide": "rgba(100,20,100,0.90)",
+	"categoria-desconocida": "rgba(112, 0, 255, 0.90)"
 }
 /*	
 1-no metales
