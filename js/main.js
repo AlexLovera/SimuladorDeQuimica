@@ -124,7 +124,7 @@ function crearObjetoCSS3D() {
 			}
 		}
 	};
-	xhttp.open("GET", "../datosDeElementos.json", false);// false para que no sea asincrono
+	xhttp.open("GET", "../datosDeElementosEspaniol.json", false);// false para que no sea asincrono
 	xhttp.send();
 	//console.log(scene);
 	console.log("tabla",targets.table);
