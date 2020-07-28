@@ -219,7 +219,7 @@ function crearObjetoCSS3D() {
 			}
 		}
 	};
-	xhttp.open("GET", "../datosDeElementosEspaniol.json", false);// false para que no sea asincrono
+	xhttp.open("GET", "../datosDeElementosConExtra.json", false);// false para que no sea asincrono
 	xhttp.send();
 	console.log("tabla",targets.table);
 }
@@ -248,10 +248,8 @@ function crearElementoHTMLYSuEvento(i, elemento) {
 	let symbol = document.createElement('div');
 	symbol.className = 'symbol';
 	symbol.title = 'simbolo';
-
 	symbol.style.color = colorPorEstadoDelElemento[elemento.phase];
 	symbol.style.textShadow = "0 0 15px " + colorPorEstadoDelElemento[elemento.phase];
-
 	symbol.textContent = elemento.symbol;
 	element.appendChild(symbol);
 
@@ -336,6 +334,12 @@ function agregarDatosAModal(i,elemento) {
 	
 	var parrafoDensidad = document.getElementById("densidad");
 	parrafoDensidad.innerHTML = `<strong>Densidad del elemento:</strong> ${elemento.density}`;
+
+	var grupo = document.getElementById("grupo");
+	grupo.innerHTML = `<strong>Grupo: </strong> ${elemento.grupo}`;
+
+	var periodo = document.getElementById("periodo");
+	periodo.innerHTML = `<strong>Periodo: </strong> ${elemento.period}`;
 
 	document.getElementById('link-wikipedia').setAttribute('href',elemento.source);
 
