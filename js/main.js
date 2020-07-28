@@ -104,6 +104,9 @@ function posicionarElementosEnTabla(elemento) {
 	targets.table.push(object);
 
 }
+
+//function agregarReferencia	
+
 function crearGrupo() {
 	var posicionesEnXGrupo = [0,0, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 0];
 	for (let i = 1; i <= 18; i++) {
@@ -201,11 +204,13 @@ function crearElementoHTMLYSuEvento(i, elemento) {
 	/*
 	 * 	nuevo
 	 * */
-	let electroNegatividad = document.createElement('div');
-	electroNegatividad.className = 'electro_negatividad';
-	electroNegatividad.textContent = elemento.electronegativity_pauling;
-	electroNegatividad.title = "electro negatividad pauling";
-	element.appendChild(electroNegatividad);   // numero atomico... protones
+	if (elemento.electronegativity_pauling != null) { // algunos elementos no tienen electronegatividad
+		let electroNegatividad = document.createElement('div');
+		electroNegatividad.className = 'electro_negatividad';
+		electroNegatividad.textContent = elemento.electronegativity_pauling;
+		electroNegatividad.title = "electro negatividad pauling";
+		element.appendChild(electroNegatividad);   // numero atomico... protones
+    }
 
 
 	let symbol = document.createElement('div');
@@ -283,22 +288,20 @@ function abrirModal(i, elemento) {
 }
 
 function agregarDatosAModal(i,elemento) {
-	// pedir informacion desde el objeto
-	//console.log(targets.simple[i].element.getElementsByClassName("symbol")[0].textContent);
-	// o pasar datos directamente del json
 
-	// cambio de textContent a innerHTML para negrita, ver problema a
 	var parrafoConfiguracionElectronica = document.getElementById("configuracion-electronica");
-	//parrafoConfiguracionElectronica.textContent = `Configuracion electronica: ${elemento.electron_configuration}`;
+
 	var configElectronicaExterna = manejarStringConfigElectronicaExterna(elemento.electron_configuration);
 	parrafoConfiguracionElectronica.innerHTML = `<strong>Configuracion electronica:</strong> ${configElectronicaExterna}`;
 
 	var parrafoInfoResumida = document.getElementById("informacion-resumida");
 	parrafoInfoResumida.innerHTML = `<strong>Resumen de elemento:</strong> ${elemento.summary}`;
 
-	var electroNegatividad = document.getElementById("electro-negatividad");
-	electroNegatividad.innerHTML = `<strong>Electro negatividad:</strong> ${elemento.electronegativity_pauling}`;
-
+	if (elemento.electronegativity_pauling != null) { // algunos elementos no tienen electronegatividad
+		var electroNegatividad = document.getElementById("electro-negatividad");
+		electroNegatividad.innerHTML = `<strong>Electro negatividad:</strong> ${elemento.electronegativity_pauling}`;
+    }
+	
 	var parrafoDensidad = document.getElementById("densidad");
 	parrafoDensidad.innerHTML = `<strong>Densidad del elemento:</strong> ${elemento.density}`;
 
