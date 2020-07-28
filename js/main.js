@@ -213,10 +213,7 @@ function crearObjetoCSS3D() {
 				object.position.x = Math.random() * 10 - 2000;
 				object.position.y = Math.random() * 10 - 2000;
 				object.position.z = Math.random() * 10 - 2000;
-				//console.log(object);
 				scene.add(object);
-				//objects.push(object);
-				//console.log("Array objects",objects);
 				targets.simple.push(object);
 				posicionarElementosEnTabla(elemento[i]);
 			}
@@ -224,9 +221,7 @@ function crearObjetoCSS3D() {
 	};
 	xhttp.open("GET", "../datosDeElementosEspaniol.json", false);// false para que no sea asincrono
 	xhttp.send();
-	//console.log(scene);
 	console.log("tabla",targets.table);
-	//targets.simple = targets.simple.splice(0,targets.simple.length);
 }
 
 function crearElementoHTMLYSuEvento(i, elemento) {
@@ -241,9 +236,6 @@ function crearElementoHTMLYSuEvento(i, elemento) {
 	//"numero atomico(Z)=protones+=electrones-/(ya que no tienen cargas, siendo neutros)";
 	element.appendChild(number);   // numero atomico... protones
 
-	/*
-	 * 	nuevo
-	 * */
 	if (elemento.electronegativity_pauling != null) { // algunos elementos no tienen electronegatividad
 		let electroNegatividad = document.createElement('div');
 		electroNegatividad.className = 'electro_negatividad';
