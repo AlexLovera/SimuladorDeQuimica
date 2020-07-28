@@ -65,6 +65,7 @@ function init() {
 	crearObjetoCSS3D();
 	crearGrupo();
 	crearPeriodo();
+	agregarReferenciaParaElementosConNumAtomicos();
 	targets.simple = targets.simple.splice(0, targets.simple.length);
 	console.log("Asignacion tardia", targets.simple);
 
@@ -105,7 +106,46 @@ function posicionarElementosEnTabla(elemento) {
 
 }
 
-//function agregarReferencia	
+function agregarReferenciaParaElementosConNumAtomicos() { // cambiar nombre
+	let posicionX = 3;
+	let indiceDatosParaRef = 0;
+	let simbolosParaReferencia = ["La-Lu", "Ac-Lr"];
+	let numAtomicosParaReferencia=["57-71", "89-103"];
+	for (let posY = 6; posY <= 7; posY++) {
+
+		let elementoRef = document.createElement('div');
+		elementoRef.className = 'element';
+		elementoRef.style.backgroundColor = "rgba(255, 255, 255, 1)";
+
+		let symbol = document.createElement('div');
+		symbol.className = 'symbol';
+		symbol.title = 'Rango de simbolos';
+		symbol.style.fontSize = "40px";
+		symbol.style.width = "120px";
+		symbol.style.top = "60px";
+		symbol.textContent = simbolosParaReferencia[indiceDatosParaRef];
+		elementoRef.appendChild(symbol);
+
+		let number = document.createElement('div');
+		number.className = 'number';
+		number.textContent = numAtomicosParaReferencia[indiceDatosParaRef++];
+		number.title = "Rango numeros atomicos";
+		number.style.fontSize = "18px";
+		elementoRef.appendChild(number);
+
+		let object = new CSS3DObject(elementoRef);
+		object.position.x = Math.random() * 10 - 2000;
+		object.position.y = Math.random() * 10 - 2000;
+		object.position.z = Math.random() * 10 - 2000;
+		scene.add(object);;
+		targets.simple.push(object);
+
+		let objectb = new THREE.Object3D();
+		objectb.position.x = posicionX * 140 - 1330;	  //1-18
+		objectb.position.y = -posY * 180 + 990;	  //1-7
+		targets.table.push(objectb);
+	}
+}	
 
 function crearGrupo() {
 	var posicionesEnXGrupo = [0,0, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 0];
