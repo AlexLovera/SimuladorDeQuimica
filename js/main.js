@@ -152,7 +152,7 @@ function crearGrupo() {
 	for (let i = 1; i <= 18; i++) {
 		let grupo = document.createElement('div');
 		grupo.className = 'grupo-periodo';
-		grupo.style.height = "10px";
+		grupo.style.height = "30px";
 
 		let numeroGP = document.createElement('div');
 		numeroGP.className = 'numeroGP';
@@ -178,11 +178,12 @@ function crearPeriodo() {
 	for (let i = 1; i <= 8; i++) {
 		let periodo = document.createElement('div');
 		periodo.className = 'grupo-periodo';
-		periodo.style.width = '60px';
+		periodo.style.height = '165px';
 
 		let numeroGP = document.createElement('div');
 		numeroGP.className = 'numeroGP';
 		numeroGP.title = 'Periodo';
+		numeroGP.style.textAlign = 'right';
 		numeroGP.textContent = i;
 		periodo.appendChild(numeroGP);
 
