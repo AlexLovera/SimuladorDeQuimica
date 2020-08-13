@@ -3,6 +3,7 @@
     {
       "appearance": "colorless gas",
       "atomic_mass": 1.008,
+      "bloque": "s",
       "boil": 20.271,
       "category": "diatomic nonmetal",
       "color": null,
@@ -54,7 +55,8 @@
       "symbol": "He",
       "xpos": 18,
       "ypos": 1,
-      "grupo": "18 (VIIIA -> notacion EEUU)"
+      "grupo": "18 (VIIIA -> notacion EEUU)",
+      "bloque": "s"
     },
     {
       "name": "Litio",
@@ -82,7 +84,8 @@
       "electron_affinity": 59.6326,
       "electronegativity_pauling": 0.98,
       "ionization_energies": [ 520.2, 7298.1, 11815.0 ],
-      "grupo": "1 (IA -> notacion EEUU)"
+      "grupo": "1 (IA -> notacion EEUU)",
+      "bloque": "s"
     },
     {
       "name": "Berilio",
@@ -110,7 +113,8 @@
       "electron_affinity": -48,
       "electronegativity_pauling": 1.57,
       "ionization_energies": [ 899.5, 1757.1, 14848.7, 21006.6 ],
-      "grupo": "2 (IIA -> notacion EEUU)"
+      "grupo": "2 (IIA -> notacion EEUU)",
+      "bloque": "s"
     },
     {
       "name": "Boro",
@@ -138,7 +142,8 @@
       "electron_affinity": 26.989,
       "electronegativity_pauling": 2.04,
       "ionization_energies": [ 800.6, 2427.1, 3659.7, 25025.8, 32826.7 ],
-      "grupo": "13 (IIIA -> notacion EEUU)"
+      "grupo": "13 (IIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Carbono",
@@ -166,7 +171,8 @@
       "electron_affinity": 121.7763,
       "electronegativity_pauling": 2.55,
       "ionization_energies": [ 1086.5, 2352.6, 4620.5, 6222.7, 37831, 47277.0 ],
-      "grupo": "14 (IVA -> notacion EEUU)"
+      "grupo": "14 (IVA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Nitr\u00f3geno",
@@ -194,7 +200,8 @@
       "electron_affinity": -6.8,
       "electronegativity_pauling": 3.04,
       "ionization_energies": [ 1402.3, 2856, 4578.1, 7475.0, 9444.9, 53266.6, 64360 ],
-      "grupo": "15 (VA -> notacion EEUU)"
+      "grupo": "15 (VA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Ox\u00edgeno",
@@ -222,7 +229,8 @@
       "electron_affinity": 140.976,
       "electronegativity_pauling": 3.44,
       "ionization_energies": [ 1313.9, 3388.3, 5300.5, 7469.2, 10989.5, 13326.5, 71330, 84078.0 ],
-      "grupo": "16 (VIA -> notacion EEUU)"
+      "grupo": "16 (VIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Fl\u00faor",
@@ -250,7 +258,8 @@
       "electron_affinity": 328.1649,
       "electronegativity_pauling": 3.98,
       "ionization_energies": [ 1681.0, 3374.2, 6050.4, 8407.7, 11022.7, 15164.1, 17868, 92038.1, 106434.3 ],
-      "grupo": "17 (VIIA -> notacion EEUU)"
+      "grupo": "17 (VIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Ne\u00f3n",
@@ -278,7 +287,8 @@
       "electron_affinity": -116,
       "electronegativity_pauling": null,
       "ionization_energies": [ 2080.7, 3952.3, 6122, 9371, 12177, 15238, 19999.0, 23069.5, 115379.5, 131432 ],
-      "grupo": "18 (VIIIA -> notacion EEUU)"
+      "grupo": "18 (VIIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Sodio",
@@ -306,7 +316,8 @@
       "electron_affinity": 52.867,
       "electronegativity_pauling": 0.93,
       "ionization_energies": [ 495.8, 4562, 6910.3, 9543, 13354, 16613, 20117, 25496, 28932, 141362, 159076 ],
-      "grupo": "1 (IA -> notacion EEUU)"
+      "grupo": "1 (IA -> notacion EEUU)",
+      "bloque": "s"
     },
     {
       "name": "Magnesio",
@@ -334,7 +345,8 @@
       "electron_affinity": -40,
       "electronegativity_pauling": 1.31,
       "ionization_energies": [ 737.7, 1450.7, 7732.7, 10542.5, 13630, 18020, 21711, 25661, 31653, 35458, 169988, 189368 ],
-      "grupo": "2 (IIA -> notacion EEUU)"
+      "grupo": "2 (IIA -> notacion EEUU)",
+      "bloque": "s"
     },
     {
       "name": "Aluminio",
@@ -362,7 +374,8 @@
       "electron_affinity": 41.762,
       "electronegativity_pauling": 1.61,
       "ionization_energies": [ 577.5, 1816.7, 2744.8, 11577, 14842, 18379, 23326, 27465, 31853, 38473, 42647, 201266, 222316 ],
-      "grupo": "13 (IIIA -> notacion EEUU)"
+      "grupo": "13 (IIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Silicio",
@@ -390,7 +403,8 @@
       "electron_affinity": 134.0684,
       "electronegativity_pauling": 1.9,
       "ionization_energies": [ 786.5, 1577.1, 3231.6, 4355.5, 16091, 19805, 23780, 29287, 33878, 38726, 45962, 50502, 235196, 257923 ],
-      "grupo": "14 (IVA -> notacion EEUU)"
+      "grupo": "14 (IVA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "F\u00f3sforo",
@@ -418,7 +432,8 @@
       "electron_affinity": 72.037,
       "electronegativity_pauling": 2.19,
       "ionization_energies": [ 1011.8, 1907, 2914.1, 4963.6, 6273.9, 21267, 25431, 29872, 35905, 40950, 46261, 54110, 59024, 271791, 296195 ],
-      "grupo": "15 (VA -> notacion EEUU)"
+      "grupo": "15 (VA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Azufre",
@@ -446,7 +461,8 @@
       "electron_affinity": 200.4101,
       "electronegativity_pauling": 2.58,
       "ionization_energies": [ 999.6, 2252, 3357, 4556, 7004.3, 8495.8, 27107, 31719, 36621, 43177, 48710, 54460, 62930, 68216, 311048, 337138 ],
-      "grupo": "16 (VIA -> notacion EEUU)"
+      "grupo": "16 (VIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Cloro",
@@ -474,7 +490,8 @@
       "electron_affinity": 348.575,
       "electronegativity_pauling": 3.16,
       "ionization_energies": [ 1251.2, 2298, 3822, 5158.6, 6542, 9362, 11018, 33604, 38600, 43961, 51068, 57119, 63363, 72341, 78095, 352994, 380760 ],
-      "grupo": "17 (VIIA -> notacion EEUU)"
+      "grupo": "17 (VIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Arg\u00f3n",
@@ -502,7 +519,8 @@
       "electron_affinity": -96,
       "electronegativity_pauling": null,
       "ionization_energies": [ 1520.6, 2665.8, 3931, 5771, 7238, 8781, 11995, 13842, 40760, 46186, 52002, 59653, 66199, 72918, 82473, 88576, 397605, 427066 ],
-      "grupo": "18 (VIIIA -> notacion EEUU)"
+      "grupo": "18 (VIIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Potasio",
@@ -530,7 +548,8 @@
       "electron_affinity": 48.383,
       "electronegativity_pauling": 0.82,
       "ionization_energies": [ 418.8, 3052, 4420, 5877, 7975, 9590, 11343, 14944, 16963.7, 48610, 54490, 60730, 68950, 75900, 83080, 93400, 99710, 444880, 476063 ],
-      "grupo": "1 (IA -> notacion EEUU)"
+      "grupo": "1 (IA -> notacion EEUU)",
+      "bloque": "s"
     },
     {
       "name": "Calcio",
@@ -558,7 +577,8 @@
       "electron_affinity": 2.37,
       "electronegativity_pauling": 1.0,
       "ionization_energies": [ 589.8, 1145.4, 4912.4, 6491, 8153, 10496, 12270, 14206, 18191, 20385, 57110, 63410, 70110, 78890, 86310, 94000, 104900, 111711, 494850, 527762 ],
-      "grupo": "2 (IIA -> notacion EEUU)"
+      "grupo": "2 (IIA -> notacion EEUU)",
+      "bloque": "s"
     },
     {
       "name": "Escandio",
@@ -586,7 +606,8 @@
       "electron_affinity": 18,
       "electronegativity_pauling": 1.36,
       "ionization_energies": [ 633.1, 1235.0, 2388.6, 7090.6, 8843, 10679, 13310, 15250, 17370, 21726, 24102, 66320, 73010, 80160, 89490, 97400, 105600, 117000, 124270, 547530, 582163 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Titanio",
@@ -614,7 +635,8 @@
       "electron_affinity": 7.289,
       "electronegativity_pauling": 1.54,
       "ionization_energies": [ 658.8, 1309.8, 2652.5, 4174.6, 9581, 11533, 13590, 16440, 18530, 20833, 25575, 28125, 76015, 83280, 90880, 100700, 109100, 117800, 129900, 137530, 602930, 639294 ],
-      "grupo": "4 (IVB -> notacion EEUU)"
+      "grupo": "4 (IVB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Vanadio",
@@ -642,7 +664,8 @@
       "electron_affinity": 50.911,
       "electronegativity_pauling": 1.63,
       "ionization_energies": [ 650.9, 1414, 2830, 4507, 6298.7, 12363, 14530, 16730, 19860, 22240, 24670, 29730, 32446, 86450, 94170, 102300, 112700, 121600, 130700, 143400, 151440, 661050, 699144 ],
-      "grupo": "5 (VB -> notacion EEUU)"
+      "grupo": "5 (VB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Cromo",
@@ -670,7 +693,8 @@
       "electron_affinity": 65.21,
       "electronegativity_pauling": 1.66,
       "ionization_energies": [ 652.9, 1590.6, 2987, 4743, 6702, 8744.9, 15455, 17820, 20190, 23580, 26130, 28750, 34230, 37066, 97510, 105800, 114300, 125300, 134700, 144300, 157700, 166090, 721870, 761733 ],
-      "grupo": "6 (VIB -> notacion EEUU)"
+      "grupo": "6 (VIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Manganeso",
@@ -698,7 +722,8 @@
       "electron_affinity": -50,
       "electronegativity_pauling": 1.55,
       "ionization_energies": [ 717.3, 1509.0, 3248, 4940, 6990, 9220, 11500, 18770, 21400, 23960, 27590, 30330, 33150, 38880, 41987, 109480, 118100, 127100, 138600, 148500, 158600, 172500, 181380, 785450, 827067 ],
-      "grupo": "7 (VIIB -> notacion EEUU)"
+      "grupo": "7 (VIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Hierro",
@@ -726,7 +751,8 @@
       "electron_affinity": 14.785,
       "electronegativity_pauling": 1.83,
       "ionization_energies": [ 762.5, 1561.9, 2957, 5290, 7240, 9560, 12060, 14580, 22540, 25290, 28000, 31920, 34830, 37840, 44100, 47206, 122200, 131000, 140500, 152600, 163000, 173600, 188100, 195200, 851800, 895161 ],
-      "grupo": "8 (VIIIB -> notacion EEUU)"
+      "grupo": "8 (VIIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Cobalto",
@@ -754,7 +780,8 @@
       "electron_affinity": 63.898,
       "electronegativity_pauling": 1.88,
       "ionization_energies": [ 760.4, 1648, 3232, 4950, 7670, 9840, 12440, 15230, 17959, 26570, 29400, 32400, 36600, 39700, 42800, 49396, 52737, 134810, 145170, 154700, 167400, 178100, 189300, 204500, 214100, 920870, 966023 ],
-      "grupo": "9 (VIIIB -> notacion EEUU)"
+      "grupo": "9 (VIIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "N\u00edquel",
@@ -782,7 +809,8 @@
       "electron_affinity": 111.65,
       "electronegativity_pauling": 1.91,
       "ionization_energies": [ 737.1, 1753.0, 3395, 5300, 7339, 10400, 12800, 15600, 18600, 21670, 30970, 34000, 37100, 41500, 44800, 48100, 55101, 58570, 148700, 159000, 169400, 182700, 194000, 205600, 221400, 231490, 992718, 1039668 ],
-      "grupo": "10 (VIIIB -> notacion EEUU)"
+      "grupo": "10 (VIIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Cobre",
@@ -810,7 +838,8 @@
       "electron_affinity": 119.235,
       "electronegativity_pauling": 1.9,
       "ionization_energies": [ 745.5, 1957.9, 3555, 5536, 7700, 9900, 13400, 16000, 19200, 22400, 25600, 35600, 38700, 42000, 46700, 50200, 53700, 61100, 64702, 163700, 174100, 184900, 198800, 210500, 222700, 239100, 249660, 1067358, 1116105 ],
-      "grupo": "11 (IB -> notacion EEUU)"
+      "grupo": "11 (IB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Zinc",
@@ -838,7 +867,8 @@
       "electron_affinity": -58,
       "electronegativity_pauling": 1.65,
       "ionization_energies": [ 906.4, 1733.3, 3833, 5731, 7970, 10400, 12900, 16800, 19600, 23000, 26400, 29990, 40490, 43800, 47300, 52300, 55900, 59700, 67300, 71200, 179100 ],
-      "grupo": "12 (IIB -> notacion EEUU)"
+      "grupo": "12 (IIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Galio",
@@ -866,7 +896,8 @@
       "electron_affinity": 41,
       "electronegativity_pauling": 1.81,
       "ionization_energies": [ 578.8, 1979.3, 2963, 6180 ],
-      "grupo": "13 (IIIA -> notacion EEUU)"
+      "grupo": "13 (IIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Germanio",
@@ -894,7 +925,8 @@
       "electron_affinity": 118.9352,
       "electronegativity_pauling": 2.01,
       "ionization_energies": [ 762, 1537.5, 3302.1, 4411, 9020 ],
-      "grupo": "14 (IVA -> notacion EEUU)"
+      "grupo": "14 (IVA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Ars\u00e9nico",
@@ -922,7 +954,8 @@
       "electron_affinity": 77.65,
       "electronegativity_pauling": 2.18,
       "ionization_energies": [ 947.0, 1798, 2735, 4837, 6043, 12310 ],
-      "grupo": "15 (VA -> notacion EEUU)"
+      "grupo": "15 (VA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Selenio",
@@ -950,7 +983,8 @@
       "electron_affinity": 194.9587,
       "electronegativity_pauling": 2.55,
       "ionization_energies": [ 941.0, 2045, 2973.7, 4144, 6590, 7880, 14990 ],
-      "grupo": "16 (VIA -> notacion EEUU)"
+      "grupo": "16 (VIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Bromo",
@@ -978,7 +1012,8 @@
       "electron_affinity": 324.537,
       "electronegativity_pauling": 2.96,
       "ionization_energies": [ 1139.9, 2103, 3470, 4560, 5760, 8550, 9940, 18600 ],
-      "grupo": "17 (VIIA -> notacion EEUU)"
+      "grupo": "17 (VIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Kript\u00f3n",
@@ -1006,7 +1041,8 @@
       "electron_affinity": -96,
       "electronegativity_pauling": 3.0,
       "ionization_energies": [ 1350.8, 2350.4, 3565, 5070, 6240, 7570, 10710, 12138, 22274, 25880, 29700, 33800, 37700, 43100, 47500, 52200, 57100, 61800, 75800, 80400, 85300, 90400, 96300, 101400, 111100, 116290, 282500, 296200, 311400, 326200 ],
-      "grupo": "18 (VIIIA -> notacion EEUU)"
+      "grupo": "18 (VIIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Rubidio",
@@ -1034,7 +1070,8 @@
       "electron_affinity": 46.884,
       "electronegativity_pauling": 0.82,
       "ionization_energies": [ 403.0, 2633, 3860, 5080, 6850, 8140, 9570, 13120, 14500, 26740 ],
-      "grupo": "1 (IA -> notacion EEUU)"
+      "grupo": "1 (IA -> notacion EEUU)",
+      "bloque": "s"
     },
     {
       "name": "Estroncio",
@@ -1062,7 +1099,8 @@
       "electron_affinity": 5.023,
       "electronegativity_pauling": 0.95,
       "ionization_energies": [ 549.5, 1064.2, 4138, 5500, 6910, 8760, 10230, 11800, 15600, 17100, 31270 ],
-      "grupo": "2 (IIA -> notacion EEUU)"
+      "grupo": "2 (IIA -> notacion EEUU)",
+      "bloque": "s"
     },
     {
       "name": "Itrio",
@@ -1090,7 +1128,8 @@
       "electron_affinity": 29.6,
       "electronegativity_pauling": 1.22,
       "ionization_energies": [ 600, 1180, 1980, 5847, 7430, 8970, 11190, 12450, 14110, 18400, 19900, 36090 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Circonio",
@@ -1118,7 +1157,8 @@
       "electron_affinity": 41.806,
       "electronegativity_pauling": 1.33,
       "ionization_energies": [ 640.1, 1270, 2218, 3313, 7752, 9500 ],
-      "grupo": "4 (IVB -> notacion EEUU)"
+      "grupo": "4 (IVB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Niobio",
@@ -1146,7 +1186,8 @@
       "electron_affinity": 88.516,
       "electronegativity_pauling": 1.6,
       "ionization_energies": [ 652.1, 1380, 2416, 3700, 4877, 9847, 12100 ],
-      "grupo": "5 (VB -> notacion EEUU)"
+      "grupo": "5 (VB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Molibdeno",
@@ -1174,7 +1215,8 @@
       "electron_affinity": 72.1,
       "electronegativity_pauling": 2.16,
       "ionization_energies": [ 684.3, 1560, 2618, 4480, 5257, 6640.8, 12125, 13860, 15835, 17980, 20190, 22219, 26930, 29196, 52490, 55000, 61400, 67700, 74000, 80400, 87000, 93400, 98420, 104400, 121900, 127700, 133800, 139800, 148100, 154500 ],
-      "grupo": "6 (VIB -> notacion EEUU)"
+      "grupo": "6 (VIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Tecnecio",
@@ -1202,7 +1244,8 @@
       "electron_affinity": 53,
       "electronegativity_pauling": 1.9,
       "ionization_energies": [ 702, 1470, 2850 ],
-      "grupo": "7 (VIIB -> notacion EEUU)"
+      "grupo": "7 (VIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Rutenio",
@@ -1230,7 +1273,8 @@
       "electron_affinity": 100.96,
       "electronegativity_pauling": 2.2,
       "ionization_energies": [ 710.2, 1620, 2747 ],
-      "grupo": "8 (VIIIB -> notacion EEUU)"
+      "grupo": "8 (VIIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Rodio",
@@ -1258,7 +1302,8 @@
       "electron_affinity": 110.27,
       "electronegativity_pauling": 2.28,
       "ionization_energies": [ 719.7, 1740, 2997 ],
-      "grupo": "9 (VIIIB -> notacion EEUU)"
+      "grupo": "9 (VIIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Paladio",
@@ -1286,7 +1331,8 @@
       "electron_affinity": 54.24,
       "electronegativity_pauling": 2.2,
       "ionization_energies": [ 804.4, 1870, 3177 ],
-      "grupo": "10 (VIIIB -> notacion EEUU)"
+      "grupo": "10 (VIIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Plata",
@@ -1314,7 +1360,8 @@
       "electron_affinity": 125.862,
       "electronegativity_pauling": 1.93,
       "ionization_energies": [ 731.0, 2070, 3361 ],
-      "grupo": "11 (IB -> notacion EEUU)"
+      "grupo": "11 (IB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Cadmio",
@@ -1342,7 +1389,8 @@
       "electron_affinity": -68,
       "electronegativity_pauling": 1.69,
       "ionization_energies": [ 867.8, 1631.4, 3616 ],
-      "grupo": "12 (IIB -> notacion EEUU)"
+      "grupo": "12 (IIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Indio (elemento)",
@@ -1370,7 +1418,8 @@
       "electron_affinity": 37.043,
       "electronegativity_pauling": 1.78,
       "ionization_energies": [ 558.3, 1820.7, 2704, 5210 ],
-      "grupo": "13 (IIIA -> notacion EEUU)"
+      "grupo": "13 (IIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Esta\u00f1o",
@@ -1398,7 +1447,8 @@
       "electron_affinity": 107.2984,
       "electronegativity_pauling": 1.96,
       "ionization_energies": [ 708.6, 1411.8, 2943.0, 3930.3, 7456 ],
-      "grupo": "14 (IVA -> notacion EEUU)"
+      "grupo": "14 (IVA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Antimonio",
@@ -1426,7 +1476,8 @@
       "electron_affinity": 101.059,
       "electronegativity_pauling": 2.05,
       "ionization_energies": [ 834, 1594.9, 2440, 4260, 5400, 10400 ],
-      "grupo": "15 (VA -> notacion EEUU)"
+      "grupo": "15 (VA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Telurio",
@@ -1454,7 +1505,8 @@
       "electron_affinity": 190.161,
       "electronegativity_pauling": 2.1,
       "ionization_energies": [ 869.3, 1790, 2698, 3610, 5668, 6820, 13200 ],
-      "grupo": "16 (VIA -> notacion EEUU)"
+      "grupo": "16 (VIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Yodo",
@@ -1482,7 +1534,8 @@
       "electron_affinity": 295.1531,
       "electronegativity_pauling": 2.66,
       "ionization_energies": [ 1008.4, 1845.9, 3180 ],
-      "grupo": "17 (VIIA -> notacion EEUU)"
+      "grupo": "17 (VIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Xen\u00f3n",
@@ -1510,7 +1563,8 @@
       "electron_affinity": -77,
       "electronegativity_pauling": 2.6,
       "ionization_energies": [ 1170.4, 2046.4, 3099.4 ],
-      "grupo": "18 (VIIIA -> notacion EEUU)"
+      "grupo": "18 (VIIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Cesio",
@@ -1538,7 +1592,8 @@
       "electron_affinity": 45.505,
       "electronegativity_pauling": 0.79,
       "ionization_energies": [ 375.7, 2234.3, 3400 ],
-      "grupo": "1 (IA -> notacion EEUU)"
+      "grupo": "1 (IA -> notacion EEUU)",
+      "bloque": "s"
     },
     {
       "name": "Bario",
@@ -1566,7 +1621,8 @@
       "electron_affinity": 13.954,
       "electronegativity_pauling": 0.89,
       "ionization_energies": [ 502.9, 965.2, 3600 ],
-      "grupo": "2 (IIA -> notacion EEUU)"
+      "grupo": "2 (IIA -> notacion EEUU)",
+      "bloque": "s"
     },
     {
       "name": "Lantano",
@@ -1594,7 +1650,8 @@
       "electron_affinity": 53,
       "electronegativity_pauling": 1.1,
       "ionization_energies": [ 538.1, 1067, 1850.3, 4819, 5940 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Cerio",
@@ -1622,7 +1679,8 @@
       "electron_affinity": 55,
       "electronegativity_pauling": 1.12,
       "ionization_energies": [ 534.4, 1050, 1949, 3547, 6325, 7490 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Praseodimio",
@@ -1650,7 +1708,8 @@
       "electron_affinity": 93,
       "electronegativity_pauling": 1.13,
       "ionization_energies": [ 527, 1020, 2086, 3761, 5551 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Neodimio",
@@ -1678,7 +1737,8 @@
       "electron_affinity": 184.87,
       "electronegativity_pauling": 1.14,
       "ionization_energies": [ 533.1, 1040, 2130, 3900 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Prometio",
@@ -1706,7 +1766,8 @@
       "electron_affinity": 12.45,
       "electronegativity_pauling": 1.13,
       "ionization_energies": [ 540, 1050, 2150, 3970 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Samario",
@@ -1734,7 +1795,8 @@
       "electron_affinity": 15.63,
       "electronegativity_pauling": 1.17,
       "ionization_energies": [ 544.5, 1070, 2260, 3990 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Europio",
@@ -1762,7 +1824,8 @@
       "electron_affinity": 11.2,
       "electronegativity_pauling": 1.2,
       "ionization_energies": [ 547.1, 1085, 2404, 4120 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Gadolinio",
@@ -1790,7 +1853,8 @@
       "electron_affinity": 13.22,
       "electronegativity_pauling": 1.2,
       "ionization_energies": [ 593.4, 1170, 1990, 4250 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Terbio",
@@ -1818,7 +1882,8 @@
       "electron_affinity": 112.4,
       "electronegativity_pauling": 1.1,
       "ionization_energies": [ 565.8, 1110, 2114, 3839 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Disprosio",
@@ -1846,7 +1911,8 @@
       "electron_affinity": 33.96,
       "electronegativity_pauling": 1.22,
       "ionization_energies": [ 573.0, 1130, 2200, 3990 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Holmio",
@@ -1874,7 +1940,8 @@
       "electron_affinity": 32.61,
       "electronegativity_pauling": 1.23,
       "ionization_energies": [ 581.0, 1140, 2204, 4100 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Erbio",
@@ -1902,7 +1969,8 @@
       "electron_affinity": 30.1,
       "electronegativity_pauling": 1.24,
       "ionization_energies": [ 589.3, 1150, 2194, 4120 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Tulio",
@@ -1930,7 +1998,8 @@
       "electron_affinity": 99,
       "electronegativity_pauling": 1.25,
       "ionization_energies": [ 596.7, 1160, 2285, 4120 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Iterbio",
@@ -1958,7 +2027,8 @@
       "electron_affinity": -1.93,
       "electronegativity_pauling": 1.1,
       "ionization_energies": [ 603.4, 1174.8, 2417, 4203 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Lutecio",
@@ -1986,7 +2056,8 @@
       "electron_affinity": 33.4,
       "electronegativity_pauling": 1.27,
       "ionization_energies": [ 523.5, 1340, 2022.3, 4370, 6445 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Hafnio",
@@ -2014,7 +2085,8 @@
       "electron_affinity": 17.18,
       "electronegativity_pauling": 1.3,
       "ionization_energies": [ 658.5, 1440, 2250, 3216 ],
-      "grupo": "4 (IVB -> notacion EEUU)"
+      "grupo": "4 (IVB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "T\u00e1ntalo (elemento)",
@@ -2042,7 +2114,8 @@
       "electron_affinity": 31,
       "electronegativity_pauling": 1.5,
       "ionization_energies": [ 761, 1500 ],
-      "grupo": "5 (VB -> notacion EEUU)"
+      "grupo": "5 (VB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Wolframio",
@@ -2070,7 +2143,8 @@
       "electron_affinity": 78.76,
       "electronegativity_pauling": 2.36,
       "ionization_energies": [ 770, 1700 ],
-      "grupo": "6 (VIB -> notacion EEUU)"
+      "grupo": "6 (VIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Renio",
@@ -2098,7 +2172,8 @@
       "electron_affinity": 5.8273,
       "electronegativity_pauling": 1.9,
       "ionization_energies": [ 760, 1260, 2510, 3640 ],
-      "grupo": "7 (VIIB -> notacion EEUU)"
+      "grupo": "7 (VIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Osmio",
@@ -2126,7 +2201,8 @@
       "electron_affinity": 103.99,
       "electronegativity_pauling": 2.2,
       "ionization_energies": [ 840, 1600 ],
-      "grupo": "8 (VIIIB -> notacion EEUU)"
+      "grupo": "8 (VIIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Iridio",
@@ -2154,7 +2230,8 @@
       "electron_affinity": 150.94,
       "electronegativity_pauling": 2.2,
       "ionization_energies": [ 880, 1600 ],
-      "grupo": "9 (VIIIB -> notacion EEUU)"
+      "grupo": "9 (VIIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Platino",
@@ -2182,7 +2259,8 @@
       "electron_affinity": 205.041,
       "electronegativity_pauling": 2.28,
       "ionization_energies": [ 870, 1791 ],
-      "grupo": "10 (VIIIB -> notacion EEUU)"
+      "grupo": "10 (VIIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Oro",
@@ -2210,7 +2288,8 @@
       "electron_affinity": 222.747,
       "electronegativity_pauling": 2.54,
       "ionization_energies": [ 890.1, 1980 ],
-      "grupo": "11 (IB -> notacion EEUU)"
+      "grupo": "11 (IB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Mercury",
@@ -2238,7 +2317,8 @@
       "electron_affinity": -48,
       "electronegativity_pauling": 2.0,
       "ionization_energies": [ 1007.1, 1810, 3300 ],
-      "grupo": "12 (IIB -> notacion EEUU)"
+      "grupo": "12 (IIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Talio",
@@ -2266,7 +2346,8 @@
       "electron_affinity": 36.4,
       "electronegativity_pauling": 1.62,
       "ionization_energies": [ 589.4, 1971, 2878 ],
-      "grupo": "13 (IIIA -> notacion EEUU)"
+      "grupo": "13 (IIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Plomo",
@@ -2294,7 +2375,8 @@
       "electron_affinity": 34.4204,
       "electronegativity_pauling": 1.87,
       "ionization_energies": [ 715.6, 1450.5, 3081.5, 4083, 6640 ],
-      "grupo": "14 (IVA -> notacion EEUU)"
+      "grupo": "14 (IVA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Bismuto",
@@ -2322,7 +2404,8 @@
       "electron_affinity": 90.924,
       "electronegativity_pauling": 2.02,
       "ionization_energies": [ 703, 1610, 2466, 4370, 5400, 8520 ],
-      "grupo": "15 (VA -> notacion EEUU)"
+      "grupo": "15 (VA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Polonio",
@@ -2350,7 +2433,8 @@
       "electron_affinity": 136,
       "electronegativity_pauling": 2.0,
       "ionization_energies": [ 812.1 ],
-      "grupo": "16 (VIA -> notacion EEUU)"
+      "grupo": "16 (VIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "\u00c1stato",
@@ -2378,7 +2462,8 @@
       "electron_affinity": 233,
       "electronegativity_pauling": 2.2,
       "ionization_energies": [ 899.003 ],
-      "grupo": "17 (VIIA -> notacion EEUU)"
+      "grupo": "17 (VIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Rad\u00f3n",
@@ -2406,7 +2491,8 @@
       "electron_affinity": -68,
       "electronegativity_pauling": 2.2,
       "ionization_energies": [ 1037 ],
-      "grupo": "18 (VIIIA -> notacion EEUU)"
+      "grupo": "18 (VIIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Francio",
@@ -2434,7 +2520,8 @@
       "electron_affinity": 46.89,
       "electronegativity_pauling": 0.79,
       "ionization_energies": [ 380 ],
-      "grupo": "1 (IA -> notacion EEUU)"
+      "grupo": "1 (IA -> notacion EEUU)",
+      "bloque": "s"
     },
     {
       "name": "Radio (elemento)",
@@ -2462,7 +2549,8 @@
       "electron_affinity": 9.6485,
       "electronegativity_pauling": 0.9,
       "ionization_energies": [ 509.3, 979.0 ],
-      "grupo": "2 (IIA -> notacion EEUU)"
+      "grupo": "2 (IIA -> notacion EEUU)",
+      "bloque": "s"
     },
     {
       "name": "Actinio",
@@ -2490,7 +2578,8 @@
       "electron_affinity": 33.77,
       "electronegativity_pauling": 1.1,
       "ionization_energies": [ 499, 1170 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Torio",
@@ -2518,7 +2607,8 @@
       "electron_affinity": 112.72,
       "electronegativity_pauling": 1.3,
       "ionization_energies": [ 587, 1110, 1930, 2780 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Protactinio",
@@ -2546,7 +2636,8 @@
       "electron_affinity": 53.03,
       "electronegativity_pauling": 1.5,
       "ionization_energies": [ 568 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Uranio",
@@ -2574,7 +2665,8 @@
       "electron_affinity": 50.94,
       "electronegativity_pauling": 1.38,
       "ionization_energies": [ 597.6, 1420 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Neptunio",
@@ -2602,7 +2694,8 @@
       "electron_affinity": 45.85,
       "electronegativity_pauling": 1.36,
       "ionization_energies": [ 604.5 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Plutonio",
@@ -2630,7 +2723,8 @@
       "electron_affinity": -48.33,
       "electronegativity_pauling": 1.28,
       "ionization_energies": [ 584.7 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Americio",
@@ -2658,7 +2752,8 @@
       "electron_affinity": 9.93,
       "electronegativity_pauling": 1.13,
       "ionization_energies": [ 578 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Curio",
@@ -2686,7 +2781,8 @@
       "electron_affinity": 27.17,
       "electronegativity_pauling": 1.28,
       "ionization_energies": [ 581 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Berkelio",
@@ -2714,7 +2810,8 @@
       "electron_affinity": -165.24,
       "electronegativity_pauling": 1.3,
       "ionization_energies": [ 601 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Californio",
@@ -2742,7 +2839,8 @@
       "electron_affinity": -97.31,
       "electronegativity_pauling": 1.3,
       "ionization_energies": [ 608 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Einstenio",
@@ -2770,7 +2868,8 @@
       "electron_affinity": -28.6,
       "electronegativity_pauling": 1.3,
       "ionization_energies": [ 619 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Fermio",
@@ -2798,7 +2897,8 @@
       "electron_affinity": 33.96,
       "electronegativity_pauling": 1.3,
       "ionization_energies": [ 627 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Mendelevio",
@@ -2826,7 +2926,8 @@
       "electron_affinity": 93.91,
       "electronegativity_pauling": 1.3,
       "ionization_energies": [ 635 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Nobelio",
@@ -2854,7 +2955,8 @@
       "electron_affinity": -223.22,
       "electronegativity_pauling": 1.3,
       "ionization_energies": [ 642 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "f"
     },
     {
       "name": "Lawrencio",
@@ -2882,7 +2984,8 @@
       "electron_affinity": -30.04,
       "electronegativity_pauling": 1.3,
       "ionization_energies": [ 470 ],
-      "grupo": "3 (IIIB -> notacion EEUU)"
+      "grupo": "3 (IIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Rutherfordio",
@@ -2910,7 +3013,8 @@
       "electron_affinity": null,
       "electronegativity_pauling": null,
       "ionization_energies": [ 580 ],
-      "grupo": "4 (IVB -> notacion EEUU)"
+      "grupo": "4 (IVB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Dubnio",
@@ -2938,7 +3042,8 @@
       "electron_affinity": null,
       "electronegativity_pauling": null,
       "ionization_energies": [],
-      "grupo": "5 (VB -> notacion EEUU)"
+      "grupo": "5 (VB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Seaborgio",
@@ -2966,7 +3071,8 @@
       "electron_affinity": null,
       "electronegativity_pauling": null,
       "ionization_energies": [],
-      "grupo": "6 (VIB -> notacion EEUU)"
+      "grupo": "6 (VIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Bohrio",
@@ -2994,7 +3100,8 @@
       "electron_affinity": null,
       "electronegativity_pauling": null,
       "ionization_energies": [],
-      "grupo": "7 (VIIB -> notacion EEUU)"
+      "grupo": "7 (VIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Hasio",
@@ -3022,7 +3129,8 @@
       "electron_affinity": null,
       "electronegativity_pauling": null,
       "ionization_energies": [],
-      "grupo": "8 (VIIIB -> notacion EEUU)"
+      "grupo": "8 (VIIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Meitnerio",
@@ -3050,7 +3158,8 @@
       "electron_affinity": null,
       "electronegativity_pauling": null,
       "ionization_energies": [],
-      "grupo": "9 (VIIIB -> notacion EEUU)"
+      "grupo": "9 (VIIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Darmstatio",
@@ -3078,7 +3187,8 @@
       "electron_affinity": null,
       "electronegativity_pauling": null,
       "ionization_energies": [],
-      "grupo": "10 (VIIIB -> notacion EEUU)"
+      "grupo": "10 (VIIIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Roentgenio",
@@ -3106,7 +3216,8 @@
       "electron_affinity": 151.0,
       "electronegativity_pauling": null,
       "ionization_energies": [],
-      "grupo": "11 (IB -> notacion EEUU)"
+      "grupo": "11 (IB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Copernicio",
@@ -3134,7 +3245,8 @@
       "electron_affinity": null,
       "electronegativity_pauling": null,
       "ionization_energies": [],
-      "grupo": "12 (IIB -> notacion EEUU)"
+      "grupo": "12 (IIB -> notacion EEUU)",
+      "bloque": "d"
     },
     {
       "name": "Nihonio",
@@ -3162,7 +3274,8 @@
       "electron_affinity": 66.6,
       "electronegativity_pauling": null,
       "ionization_energies": [],
-      "grupo": "13 (IIIA -> notacion EEUU)"
+      "grupo": "13 (IIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Flerovio",
@@ -3190,7 +3303,8 @@
       "electron_affinity": null,
       "electronegativity_pauling": null,
       "ionization_energies": [],
-      "grupo": "14 (IVA -> notacion EEUU)"
+      "grupo": "14 (IVA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Moscovio",
@@ -3218,7 +3332,8 @@
       "electron_affinity": 35.3,
       "electronegativity_pauling": null,
       "ionization_energies": [],
-      "grupo": "15 (VA -> notacion EEUU)"
+      "grupo": "15 (VA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Livermorio",
@@ -3246,7 +3361,8 @@
       "electron_affinity": 74.9,
       "electronegativity_pauling": null,
       "ionization_energies": [],
-      "grupo": "16 (VIA -> notacion EEUU)"
+      "grupo": "16 (VIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Teneso",
@@ -3274,7 +3390,8 @@
       "electron_affinity": 165.9,
       "electronegativity_pauling": null,
       "ionization_energies": [],
-      "grupo": "17 (VIIA -> notacion EEUU)"
+      "grupo": "17 (VIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Oganes\u00f3n",
@@ -3302,7 +3419,8 @@
       "electron_affinity": 5.40318,
       "electronegativity_pauling": null,
       "ionization_energies": [],
-      "grupo": "18 (VIIIA -> notacion EEUU)"
+      "grupo": "18 (VIIIA -> notacion EEUU)",
+      "bloque": "p"
     },
     {
       "name": "Ununennio",
@@ -3330,7 +3448,8 @@
       "electron_affinity": 63.87,
       "electronegativity_pauling": null,
       "ionization_energies": [],
-      "grupo": "1 (IA -> notacion EEUU)"
+      "grupo": "1 (IA -> notacion EEUU)",
+      "bloque": "s"
     }
   ]
 }
