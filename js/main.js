@@ -220,7 +220,7 @@ function crearObjetoCSS3D() {
 			}
 		}
 	};
-	xhttp.open("GET", "../datosDeElementosConExtra.json", false);// false para que no sea asincrono
+	xhttp.open("GET", "../datosDeElementosConBloques.json", false);// false para que no sea asincrono
 	xhttp.send();
 	console.log("tabla",targets.table);
 }
@@ -341,6 +341,9 @@ function agregarDatosAModal(i,elemento) {
 
 	var periodo = document.getElementById("periodo");
 	periodo.innerHTML = `<strong>Periodo: </strong> ${elemento.period}`;
+
+	var bloque = document.getElementById("bloque");
+	bloque.innerHTML = `<strong>Bloque: </strong> ${elemento.bloque}`;
 
 	document.getElementById('link-wikipedia').setAttribute('href',elemento.source);
 
