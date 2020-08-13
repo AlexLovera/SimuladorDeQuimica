@@ -220,7 +220,7 @@ function crearObjetoCSS3D() {
 			}
 		}
 	};
-	xhttp.open("GET", "../datosDeElementosConBloques.json", false);// false para que no sea asincrono
+	xhttp.open("GET", "../datosDeElementosConExtra.json", false);// false para que no sea asincrono
 	xhttp.send();
 	console.log("tabla",targets.table);
 }
