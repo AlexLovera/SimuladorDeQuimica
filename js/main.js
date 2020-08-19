@@ -337,7 +337,10 @@ function agregarDatosAModal(i,elemento) {
     }
 	
 	var parrafoDensidad = document.getElementById("densidad");
-	parrafoDensidad.innerHTML = `<strong>Densidad del elemento:</strong> ${elemento.density}`;
+	if (elemento.density != null)
+		parrafoDensidad.innerHTML = `<strong>Densidad del elemento:</strong> ${elemento.density}`;
+	else
+		parrafoDensidad.innerHTML = "";
 
 	var grupo = document.getElementById("grupo");
 	grupo.innerHTML = `<strong>Grupo: </strong> ${elemento.grupo}`;
