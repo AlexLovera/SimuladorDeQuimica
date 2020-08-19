@@ -328,9 +328,12 @@ function agregarDatosAModal(i,elemento) {
 	var parrafoInfoResumida = document.getElementById("informacion-resumida");
 	parrafoInfoResumida.innerHTML = `<strong>Resumen de elemento:</strong> ${elemento.summary}`;
 
-	if (elemento.electronegativity_pauling != null) { // algunos elementos no tienen electronegatividad
-		var electroNegatividad = document.getElementById("electro-negatividad");
+	var electroNegatividad = document.getElementById("electro-negatividad");
+	//electroNegatividad.innerHTML = elemento.electronegativity_pauling != null ? `<strong>Electro negatividad:</strong> ${elemento.electronegativity_pauling}` : "";
+	if (elemento.electronegativity_pauling != null) { // algunos elementos no tienen electronegatividad		
 		electroNegatividad.innerHTML = `<strong>Electro negatividad:</strong> ${elemento.electronegativity_pauling}`;
+	} else {
+		electroNegatividad.innerHTML = "";
     }
 	
 	var parrafoDensidad = document.getElementById("densidad");
