@@ -2,6 +2,7 @@
     background-color: #000000;
     margin: 0;
     overflow: hidden;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #menu {
@@ -10,6 +11,26 @@
     width: 100%;
     text-align: right;
 }
+
+.grupo-periodo {
+    width: 110px;
+    height: 140px;
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    line-height: normal;
+    cursor: default;
+}
+
+    .grupo-periodo .numeroGP {
+        position: absolute;
+        top: 40px;
+        left: 0px;
+        right: 0px;
+        font-size: 60px;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.75);
+        text-shadow: 0 0 50px rgba(255, 255, 255, 0.75);
+    }
 
 .element {
     width: 120px;
@@ -43,7 +64,7 @@
         font-size: 60px;
         font-weight: bold;
         color: rgba(0,0,0,0.75);
-        text-shadow: 0 0 25px rgb(128, 128, 128); /*0,0,0,0.95 puede ir*/
+        /*text-shadow: 0 0 25px rgb(128, 128, 128); lo voy a modificar desde js*//*0,0,0,0.95 puede ir*/
     }
 
     .element .details {
@@ -51,6 +72,14 @@
         bottom: 15px;
         left: 0px;
         right: 0px;
+        font-size: 12px;
+        color: rgba(0,0,0,0.75);
+    }
+
+    .element .electro_negatividad {
+        position: absolute;
+        top: 20px;
+        left: 20px;
         font-size: 12px;
         color: rgba(0,0,0,0.75);
     }
@@ -72,3 +101,194 @@ button {
         color: #000000;
         background-color: rgba(0,255,255,0.75);
     }
+
+:root {
+    --modal-duration: 2s;
+    --modal-color: rgba(0,255,255,0.75);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.modal-content {
+    margin: 10% auto;
+    width: 60%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    animation-name: modalopen;
+    animation-duration: var(--modal-duration);
+}
+
+.modal-header h2,
+.modal-footer h3 {
+    margin: 0;
+}
+
+.modal-header {
+    background: var(--modal-color);
+    padding: 8px;
+    color: rgba(0,0,0,0.75);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.modal-body {
+    padding: 10px 20px;
+    background: rgba(127,255,255,0.75);
+}
+
+.modal-footer {
+    background: var(--modal-color);
+    padding: 10px;
+    color: #fff;
+    text-align: right;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.close {
+    color: #ccc;
+    float: right;
+    font-size: 30px;
+    color: #fff;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.izquierda {
+    float: left;
+    width:73%;
+    position:relative;
+    display:block;
+}
+
+.derecha {
+    float: right;
+    width: 24%;
+    position: relative;
+    display: block;
+}
+
+.clear {
+    clear: both;
+}
+
+#informacion-resumida, #densidad {
+    padding: 0 0 5px 0;
+}
+
+#referencias {
+    color: #fff;
+    /*width:100%;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+ul{
+    list-style:none;
+    margin:auto 0%;
+    width:88%;
+    padding:0;
+}
+
+li{
+    font-size:small;
+    /*float:left;  para tener las referencias arriba.*/
+    padding:9%;
+    width:146px;
+
+}
+
+#categorias-de-elementos {
+    text-align:center;
+    font-weight:800;
+}
+
+#no-metales {
+    background: rgba(0,255,127,0.90);
+}
+
+#gases-nobles {
+    background: rgba(127,255,212,0.90);
+}
+
+#metales-alcalinos {
+    background: rgba(255,165,0,0.90);
+}
+
+#metales-alcalinoterreos {
+    background: rgba(255,215,0,0.90);
+}
+
+#metaloides {
+    background: rgba(255,0,255,0.90);
+}
+
+#halogenos {
+    background: rgba(230,200,100,0.90);
+}
+
+#metales-postransicionales {
+    background: rgba(0, 145, 155, 0.90);
+}
+
+#metales-de-transicion {
+    background: rgba(255,105,180,0.90);
+}
+
+#actinidos {
+    background: rgba(255,150,100,0.90);
+}
+
+#lantanidos {
+    background: rgba(100,20,100,0.90);
+}
+
+#categoria-desconocida {
+    background: rgba(112, 0, 255, 0.90);
+}
+
+#estados {
+    text-align: center;
+    font-weight: 800;
+    background: rgba(30, 207, 196, 0.90);
+}
+
+#solido {
+    color: rgba(255, 255, 255, 1);
+    background: rgba(30, 207, 196, 0.90);
+}
+
+#liquido {
+    color: rgba(229, 255, 0, 1);
+    background: rgba(30, 207, 196, 0.90);
+}
+
+#gas {
+    color: rgba(255, 3, 3, 1);
+    background: rgba(30, 207, 196, 0.90);
+}
