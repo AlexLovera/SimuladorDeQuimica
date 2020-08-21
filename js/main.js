@@ -34,8 +34,8 @@ const coloresPorCategoriaDelElemento = {
 
 const colorPorEstadoDelElemento = {
 	"Solid": "rgba(255, 255, 255, 0.60)",  //   "rgba(0, 255, 13, 0.75)
-	"Liquid": "rgba(229, 255, 0, 0.60)",
-	"Gas": "rgba(255, 3, 3, 0.60)"
+	"Liquid":"rgba(229, 255, 0, 0.60)",
+	"Gas":"rgba(255, 3, 3, 0.60)"
 }
 
 var camera, scene, renderer;
@@ -67,9 +67,8 @@ function init() {
 	crearPeriodo();
 	agregarReferenciaParaElementosConNumAtomicos();
 	targets.simple = targets.simple.splice(0, targets.simple.length);
-	console.log("Asignacion tardia", targets.simple);
 
-	generarEsfera();
+	//generarEsfera();
 
 	renderer = new CSS3DRenderer();
 	renderer.setSize(window.innerWidth, window.innerHeight);
@@ -81,10 +80,6 @@ function init() {
 	controls.minDistance = 500;
 	controls.maxDistance = 6000;
 	controls.addEventListener('change', render);
-
-	//No se usa, pero sirve como ejemplo para poder usar el evento con el elemento.
-	console.log("Longitud de simple antes de transform", targets.simple.length);
-	console.log("Longitud de table antes de transform", targets.table.length);
 
 	agregarEventosDeClickABotones();
 	transform(targets.table, 2000);
@@ -110,7 +105,7 @@ function agregarReferenciaParaElementosConNumAtomicos() { // cambiar nombre
 	let posicionX = 3;
 	let indiceDatosParaRef = 0;
 	let simbolosParaReferencia = ["La-Lu", "Ac-Lr"];
-	let numAtomicosParaReferencia = ["57-71", "89-103"];
+	let numAtomicosParaReferencia=["57-71", "89-103"];
 	for (let posY = 6; posY <= 7; posY++) {
 
 		let elementoRef = document.createElement('div');
@@ -145,10 +140,10 @@ function agregarReferenciaParaElementosConNumAtomicos() { // cambiar nombre
 		objectb.position.y = -posY * 180 + 990;	  //1-7
 		targets.table.push(objectb);
 	}
-}
+}	
 
 function crearGrupo() {
-	var posicionesEnXGrupo = [0, 0, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 0];
+	var posicionesEnXGrupo = [0,0, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 0];
 	for (let i = 1; i <= 18; i++) {
 		let grupo = document.createElement('div');
 		grupo.className = 'grupo-periodo';
@@ -171,7 +166,7 @@ function crearGrupo() {
 		objectb.position.x = i * 140 - 1330;	  //1-18
 		objectb.position.y = -posicionesEnXGrupo[i] * 180 + 990;	  //1-7
 		targets.table.push(objectb);
-	}
+    }
 }
 
 function crearPeriodo() {
@@ -222,7 +217,7 @@ function crearObjetoCSS3D() {
 	};
 	xhttp.open("GET", "../datosDeElementosConExtra.json", false);// false para que no sea asincrono
 	xhttp.send();
-	console.log("tabla", targets.table);
+	console.log("tabla",targets.table);
 }
 
 function crearElementoHTMLYSuEvento(i, elemento) {
@@ -232,7 +227,7 @@ function crearElementoHTMLYSuEvento(i, elemento) {
 
 	let number = document.createElement('div');
 	number.className = 'number';
-	number.textContent = i + 1;
+	number.textContent = i+1;
 	number.title = "numero atomico(Z)=protones+=electrones-";
 	//"numero atomico(Z)=protones+=electrones-/(ya que no tienen cargas, siendo neutros)";
 	element.appendChild(number);   // numero atomico... protones
@@ -243,7 +238,7 @@ function crearElementoHTMLYSuEvento(i, elemento) {
 		electroNegatividad.textContent = elemento.electronegativity_pauling;
 		electroNegatividad.title = "electro negatividad pauling";
 		element.appendChild(electroNegatividad);   // numero atomico... protones
-	}
+    }
 
 
 	let symbol = document.createElement('div');
@@ -262,7 +257,7 @@ function crearElementoHTMLYSuEvento(i, elemento) {
 
 	//element.addEventListener('mouseover', () => elementMouseOverHandler(i), false);//Agrego tween.removeall... para no cancelar lo de sphere
 	//element.addEventListener('mouseout', () => elementMouseOutHandler(), false);
-	element.addEventListener('click', () => elementClickHandler(i, elemento), false);
+	element.addEventListener('click', () => elementClickHandler(i,elemento), false);
 	//NUEVO MOVER MOUSE
 	//element.addEventListener('mousemove', onDocumentMouseMove, false);
 
@@ -270,8 +265,8 @@ function crearElementoHTMLYSuEvento(i, elemento) {
 }
 
 // Aca se tiene aplicar el modal
-function elementClickHandler(i, elemento) {
-	abrirModal(i, elemento);
+function elementClickHandler(i,elemento) {
+	abrirModal(i,elemento);
 }
 
 // falta agregar la informacion
@@ -296,14 +291,14 @@ function elementMouseOverHandler(i) {
 }
 
 function abrirModal(i, elemento) {
-
+	
 	transform(targets.table, 1000);
 
 	// Adelanta el elemento hacia la camara
 	new TWEEN.Tween(targets.simple[i].position)
 		.to({
 			x: 300,
-			y: 20,
+			y:20,
 			z: 2300
 		}, Math.random() * 1000 + 2000)		// importante 1000 + 2000
 		.easing(TWEEN.Easing.Exponential.InOut)
@@ -315,10 +310,12 @@ function abrirModal(i, elemento) {
 		.start();						  // para usar la config elec sin efectos
 	modal.style.display = 'block';
 	agregarDatosAModal(i, elemento);
-
+	/*x: camera.position.x + 250,
+			y: camera.position.y+10,
+			z: camera.position.z -410*/
 }
 
-function agregarDatosAModal(i, elemento) {
+function agregarDatosAModal(i,elemento) {
 
 	var parrafoConfiguracionElectronica = document.getElementById("configuracion-electronica");
 
@@ -336,6 +333,8 @@ function agregarDatosAModal(i, elemento) {
 		electroNegatividad.innerHTML = "";
 	}
 
+
+	
 	var parrafoDensidad = document.getElementById("densidad");
 	if (elemento.density != null)
 		parrafoDensidad.innerHTML = `<strong>Densidad del elemento:</strong> ${elemento.density}`;
@@ -345,28 +344,49 @@ function agregarDatosAModal(i, elemento) {
 	var grupo = document.getElementById("grupo");
 	grupo.innerHTML = `<strong>Grupo: </strong> ${elemento.grupo}`;
 
+	var afinidadElectronica = document.getElementById("afinidad-electronica");
+	if (elemento.electron_affinity != null) {
+		afinidadElectronica.innerHTML = `<strong>Afinidad electronica: </strong> ${elemento.electron_affinity}`;
+	} else {
+		afinidadElectronica.innerHTML = "";
+    }
+	var energiaIonizacion = document.getElementById("energia-ionizacion");
+	if (elemento.ionization_energies.length != 0) {
+		let energiasDeIonizacion = "";
+		for (let energiaIonizacion = 0; energiaIonizacion < elemento.ionization_energies.length; energiaIonizacion++) {
+			if (energiaIonizacion == elemento.ionization_energies.length - 1)
+				energiasDeIonizacion += elemento.ionization_energies[energiaIonizacion];
+			else 
+				energiasDeIonizacion += elemento.ionization_energies[energiaIonizacion] + ", ";
+		}
+		energiaIonizacion.innerHTML = `<strong>Energia de ionizacion: </strong> ${energiasDeIonizacion}`;
+	} else {
+		energiaIonizacion.innerHTML = "";
+    }
+	
+
 	var periodo = document.getElementById("periodo");
 	periodo.innerHTML = `<strong>Periodo: </strong> ${elemento.period}`;
 
 	var bloque = document.getElementById("bloque");
 	bloque.innerHTML = `<strong>Bloque: </strong> ${elemento.bloque}`;
 
-	document.getElementById('link-wikipedia').setAttribute('href', elemento.source);
+	document.getElementById('link-wikipedia').setAttribute('href',elemento.source);
 
 }
 
 function manejarStringConfigElectronicaExterna(configElectronica) {
 	var indiceDeLinea = 1;
-	var configElectronicaExterna = "<br>";
+	var configElectronicaExterna ="<br>";
 	var listaDeAlgo = configElectronica.split(" ");
-	for (let subString of listaDeAlgo) {
+	for (let subString of listaDeAlgo) {	
 		if (indiceDeLinea == subString[0]) {
 			configElectronicaExterna += `${subString} `;
 		} else {
 			configElectronicaExterna += `<br>${subString} `;
 			indiceDeLinea++;
-		}
-	}
+        }		 
+    }	
 
 	return configElectronicaExterna;
 }
@@ -421,7 +441,7 @@ function agregarObjetoAEsfera(vectorDeEsfera, indice, length) {
 
 function agregarEventosDeClickABotones() {
 	agregarEventoDeClickABoton(targets.table, 'tabla');
-	agregarEventoDeClickABoton(targets.esfera, 'esfera');
+	//agregarEventoDeClickABoton(targets.esfera, 'esfera');
 }
 
 function agregarEventoDeClickABoton(target, elementId) {
@@ -458,11 +478,11 @@ function agregarAnimacionALaCamara(posiscionDeLaCamara, posicionesFinales) {
 
 function transform(targett, duration) {
 	//TWEEN.removeAll();
-	/*
-   console.log("Array objects", objects);
-   console.log("Array simple", targets.simple);
-   console.log("Entra a transform");
-   console.log("Longitud de simple en transform", targets.simple.length);	  */
+	 /*
+	console.log("Array objects", objects);
+	console.log("Array simple", targets.simple);
+	console.log("Entra a transform");
+	console.log("Longitud de simple en transform", targets.simple.length);	  */
 
 	for (var i = 0; i < targets.simple.length; i++) {
 		var object = targets.simple[i];
