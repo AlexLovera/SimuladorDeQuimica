@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabla periodica 3D</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="referencias">
+        <ul>
+            <li id="categorias-de-elementos">Carategorias de elementos:</li>
+            <li id="no-metales">no metales</li>
+            <li id="gases-nobles">gases nobles</li>
+            <li id="metales-alcalinos">metales alcalinos</li>
+            <li id="metales-alcalinoterreos">metales alcalinoterreos</li>
+            <li id="metaloides">metaloides</li>
+            <li id="halogenos">halogenos</li>
+            <li id="metales-postransicionales">metales postransicionales</li>
+            <li id="metales-de-transicion">metales de transicion</li>
+            <li id="actinidos">actinidos</li>
+            <li id="lantanidos">lantanidos</li>
+            <li id="categoria-desconocida">categoria desconocida</li>
+
+            <li></li>
+            <li id="estados">Estado(color de simbolo):</li>
+            <li id="solido">Solido</li>
+            <li id="liquido">Liquido</li>
+            <li id="gas">Gas</li>
+            <div class="clear"></div>
+        </ul>
+    </div>
+
+    <div id="container"></div>
+    <div id="menu">
+        <button id="tabla">TABLA</button>
+        <button id="esfera">ESFERA</button>
+    </div>
+
+    <div id="my-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Informacion extra del elemento</h2>
+            </div>
+            <div class="modal-body">
+
+                <div class="izquierda">
+                    <div id="informacion-resumida"></div>
+                    <div id="electro-negatividad"></div>
+                    <div id="densidad"></div>
+                    <div id="grupo"></div>
+                    <div id="periodo"></div>
+                    <a id="link-wikipedia" href="#" target="_blank">Enlace a wikipedia</a>
+                </div>
+
+                <div class="derecha">
+                    <div id="configuracion-electronica"></div>
+                    <div id="bloque"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="modal-footer">
+                <h3>Representacion del orbital >>></h3>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
