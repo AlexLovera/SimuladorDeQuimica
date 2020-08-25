@@ -2,9 +2,9 @@
 
 import * as THREE from '../build/three.module.js';
 
-import { TWEEN } from '../jsm/libs/tween.module.min.js';
-import { TrackballControls } from '../jsm/controls/TrackballControls.js';
-import { CSS3DRenderer, CSS3DObject } from '../jsm/renderers/CSS3DRenderer.js';
+import { TWEEN } from 'https://alexxlll.github.io/SimuladorDeQuimica/jsm/libs/tween.module.min.js';
+import { TrackballControls } from 'https://alexxlll.github.io/SimuladorDeQuimica/jsm/controls/TrackballControls.js';
+import { CSS3DRenderer, CSS3DObject } from 'https://alexxlll.github.io/SimuladorDeQuimica/jsm/renderers/CSS3DRenderer.js';
 
 const coloresPorCategoriaDelElemento = {
 	"diatomic nonmetal": "rgba(0,255,127,0.90)",	// 0.75 para que se vea mas tranqui
