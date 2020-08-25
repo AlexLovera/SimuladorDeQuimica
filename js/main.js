@@ -1,6 +1,6 @@
 // JavaScript source code
 
-import * as THREE from '../build/three.module.js';
+import * as THREE from 'https://alexxlll.github.io/SimuladorDeQuimica/build/three.module.js';
 
 import { TWEEN } from 'https://alexxlll.github.io/SimuladorDeQuimica/jsm/libs/tween.module.min.js';
 import { TrackballControls } from 'https://alexxlll.github.io/SimuladorDeQuimica/jsm/controls/TrackballControls.js';
