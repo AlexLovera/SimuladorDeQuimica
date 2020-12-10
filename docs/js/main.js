@@ -1,10 +1,10 @@
 // JavaScript source code
 
-import * as THREE from 'https://alexxlll.github.io/SimuladorDeQuimica/build/three.module.js';
+import * as THREE from 'https://alexlovera.github.io/SimuladorDeQuimica/build/three.module.js';
 
-import { TWEEN } from 'https://alexxlll.github.io/SimuladorDeQuimica/jsm/libs/tween.module.min.js';
-import { TrackballControls } from 'https://alexxlll.github.io/SimuladorDeQuimica/jsm/controls/TrackballControls.js';
-import { CSS3DRenderer, CSS3DObject } from 'https://alexxlll.github.io/SimuladorDeQuimica/jsm/renderers/CSS3DRenderer.js';
+import { TWEEN } from 'https://alexlovera.github.io/SimuladorDeQuimica/jsm/libs/tween.module.min.js';
+import { TrackballControls } from 'https://alexlovera.github.io/SimuladorDeQuimica/jsm/controls/TrackballControls.js';
+import { CSS3DRenderer, CSS3DObject } from 'https://alexlovera.github.io/SimuladorDeQuimica/jsm/renderers/CSS3DRenderer.js';
 
 const coloresPorCategoriaDelElemento = {
 	"diatomic nonmetal": "rgba(0,255,127,0.90)",	// 0.75 para que se vea mas tranqui
@@ -220,7 +220,7 @@ function crearObjetoCSS3D() {
 			}
 		}
 	};
-	xhttp.open("GET", "https://alexxlll.github.io/SimuladorDeQuimica/datosDeElementosConExtra.json", false);// false para que no sea asincrono
+	xhttp.open("GET", "https://alexlovera.github.io/SimuladorDeQuimica/datosDeElementosConExtra.json", false);// false para que no sea asincrono
 	xhttp.send();
 	console.log("tabla", targets.table);
 }
