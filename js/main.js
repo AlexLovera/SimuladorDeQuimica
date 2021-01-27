@@ -68,7 +68,6 @@ function init(elementos) {
 	crearPeriodo();
 	agregarReferenciaParaElementosConNumAtomicos();
 	targets.simple = targets.simple.splice(0, targets.simple.length);
-	console.log("Asignacion tardia", targets.simple);
 
 	generarEsfera();
 
@@ -84,8 +83,6 @@ function init(elementos) {
 	controls.addEventListener('change', render);
 
 	//No se usa, pero sirve como ejemplo para poder usar el evento con el elemento.
-	console.log("Longitud de simple antes de transform", targets.simple.length);
-	console.log("Longitud de table antes de transform", targets.table.length);
 
 	agregarEventosDeClickABotones();
 	transform(targets.table, 2000);
@@ -106,7 +103,6 @@ function obtenerDatosDeElementos(){
 function posicionarElementosEnTabla(elemento) {
 
 	let object = new THREE.Object3D();
-	//console.log(typeof (elemento.xpos), elemento.xpos);
 	object.position.x = elemento.xpos * 140 - 1330;	  //1-18
 	object.position.y = -elemento.ypos * 180 + 990;	  //1-7
 	targets.table.push(object);
