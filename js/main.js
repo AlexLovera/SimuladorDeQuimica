@@ -139,7 +139,7 @@ function agregarReferenciaParaElementosConNumAtomicos() { // cambiar nombre
 		object.position.x = Math.random() * 10 - 2000;
 		object.position.y = Math.random() * 10 - 2000;
 		object.position.z = Math.random() * 10 - 2000;
-		scene.add(object);;
+		scene.add(object);
 		targets.simple.push(object);
 
 		let objectb = new THREE.Object3D();
@@ -166,7 +166,7 @@ function crearGrupo() {
 		object.position.x = Math.random() * 10 - 2000;
 		object.position.y = Math.random() * 10 - 2000;
 		object.position.z = Math.random() * 10 - 2000;
-		scene.add(object);;
+		scene.add(object);
 		targets.simple.push(object);
 
 		let objectb = new THREE.Object3D();
@@ -193,11 +193,11 @@ function crearPeriodo() {
 		object.position.x = Math.random() * 10 - 2000;
 		object.position.y = Math.random() * 10 - 2000;
 		object.position.z = Math.random() * 10 - 2000;
-		scene.add(object);;
+		scene.add(object);
 		targets.simple.push(object);
 
 		let objectb = new THREE.Object3D();
-		objectb.position.x = 0 * 140 - 1330;	  //1-18
+		objectb.position.x = 0 - 1330;	  //1-18
 		objectb.position.y = -i * 180 + 990;	  //1-7
 		targets.table.push(objectb);
 	}
