@@ -150,7 +150,7 @@ function agregarReferenciaParaElementosConNumAtomicos() { // cambiar nombre
 }
 
 function crearGrupo() {
-	var posicionesEnXGrupo = [0, 0, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 0];
+	let posicionesEnXGrupo = [0, 0, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 0];
 	for (let i = 1; i <= 18; i++) {
 		let grupo = document.createElement('div');
 		grupo.className = 'grupo-periodo';
