@@ -82,8 +82,6 @@ function init(elementos) {
 	controls.addEventListener('change', render);
 
 	//No se usa, pero sirve como ejemplo para poder usar el evento con el elemento.
-	console.log("Longitud de simple antes de transform", targets.simple.length);
-	console.log("Longitud de table antes de transform", targets.table.length);
 
 	agregarEventosDeClickABotones();
 	transform(targets.table, 2000);
@@ -450,11 +448,6 @@ function agregarAnimacionALaCamara(posiscionDeLaCamara, posicionesFinales) {
 
 function transform(targett, duration) {
 	//TWEEN.removeAll();
-	/*
-   console.log("Array objects", objects);
-   console.log("Array simple", targets.simple);
-   console.log("Entra a transform");
-   console.log("Longitud de simple en transform", targets.simple.length);	  */
 
 	for (let i = 0; i < targets.simple.length; i++) {
 		let object = targets.simple[i];
