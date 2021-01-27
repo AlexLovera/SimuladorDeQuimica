@@ -207,28 +207,16 @@ function crearPeriodo() {
 	}
 }
 
-function crearObjetoCSS3D() {
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function () {
-		if (this.readyState == 4 && this.status == 200) {
-			var respuesta = JSON.parse(xhttp.responseText);
-			var elemento = respuesta.elements;
-
-			for (var i = 0; i < elemento.length; i++) {
-
-				let object = new CSS3DObject(crearElementoHTMLYSuEvento(i, elemento[i]));
-				object.position.x = Math.random() * 10 - 2000;
-				object.position.y = Math.random() * 10 - 2000;
-				object.position.z = Math.random() * 10 - 2000;
-				scene.add(object);
-				targets.simple.push(object);
-				posicionarElementosEnTabla(elemento[i]);
-			}
-		}
-	};
-	xhttp.open("GET", "../datosDeElementosConExtra.json", false);// false para que no sea asincrono
-	xhttp.send();
-	console.log("tabla", targets.table);
+function crearObjetoCSS3D(elementos) {
+	elementos.forEach((elemento,indice)=> { // modularizar
+		let object = new CSS3DObject(crearElementoHTMLYSuEvento(indice, elemento));
+		object.position.x = Math.random() * 10 - 2000;
+		object.position.y = Math.random() * 10 - 2000;
+		object.position.z = Math.random() * 10 - 2000;
+		scene.add(object);
+		targets.simple.push(object);
+		posicionarElementosEnTabla(elemento);
+	});
 }
 
 function crearElementoHTMLYSuEvento(i, elemento) {
