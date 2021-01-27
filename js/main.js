@@ -63,8 +63,7 @@ function init(elementos) {
 	camera.position.z = posicionInicialCamara["z"];
 
 	scene = new THREE.Scene();
-
-	crearObjetoCSS3D();
+	crearObjetoCSS3D(elementos);
 	crearGrupo();
 	crearPeriodo();
 	agregarReferenciaParaElementosConNumAtomicos();
