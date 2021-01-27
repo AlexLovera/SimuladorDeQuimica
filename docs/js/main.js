@@ -38,8 +38,8 @@ const colorPorEstadoDelElemento = {
 	"Gas": "rgba(255, 3, 3, 0.60)"
 }
 
-var camera, scene, renderer;
-var controls;
+let camera, scene, renderer;
+let controls;
 const posicionInicialCamara = {
 	x: 0,
 	y: 0,
@@ -49,25 +49,24 @@ const posicionInicialCamara = {
 const modal = document.querySelector('#my-modal');
 const closeBtn = document.querySelector('.close');
 
-var objects = [];
-var targets = { table: [], esfera: [], simple: [] };
+let targets = { table: [], esfera: [], simple: [] };
 
-init();
-animate();
+obtenerDatosDeElementos().then(elementos => {
+	init(elementos);
+	animate();
+});
 
-function init() {
+function init(elementos) {
 
 	camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 10000);
 	camera.position.z = posicionInicialCamara["z"];
 
 	scene = new THREE.Scene();
-
-	crearObjetoCSS3D();
+	crearObjetoCSS3D(elementos);
 	crearGrupo();
 	crearPeriodo();
 	agregarReferenciaParaElementosConNumAtomicos();
 	targets.simple = targets.simple.splice(0, targets.simple.length);
-	console.log("Asignacion tardia", targets.simple);
 
 	generarEsfera();
 
@@ -96,10 +95,15 @@ function init() {
 	window.addEventListener('resize', onWindowResize, false);
 }
 
+function obtenerDatosDeElementos(){
+	return fetch("https://alexlovera.github.io/SimuladorDeQuimica/datosDeElementosConExtra.json")
+		.then(respuesta => respuesta.json())
+		.then(datosElementosTabla => datosElementosTabla.elements);
+}
+
 function posicionarElementosEnTabla(elemento) {
 
 	let object = new THREE.Object3D();
-	//console.log(typeof (elemento.xpos), elemento.xpos);
 	object.position.x = elemento.xpos * 140 - 1330;	  //1-18
 	object.position.y = -elemento.ypos * 180 + 990;	  //1-7
 	targets.table.push(object);
@@ -137,7 +141,7 @@ function agregarReferenciaParaElementosConNumAtomicos() { // cambiar nombre
 		object.position.x = Math.random() * 10 - 2000;
 		object.position.y = Math.random() * 10 - 2000;
 		object.position.z = Math.random() * 10 - 2000;
-		scene.add(object);;
+		scene.add(object);
 		targets.simple.push(object);
 
 		let objectb = new THREE.Object3D();
@@ -148,7 +152,7 @@ function agregarReferenciaParaElementosConNumAtomicos() { // cambiar nombre
 }
 
 function crearGrupo() {
-	var posicionesEnXGrupo = [0, 0, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 0];
+	let posicionesEnXGrupo = [0, 0, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 0];
 	for (let i = 1; i <= 18; i++) {
 		let grupo = document.createElement('div');
 		grupo.className = 'grupo-periodo';
@@ -164,7 +168,7 @@ function crearGrupo() {
 		object.position.x = Math.random() * 10 - 2000;
 		object.position.y = Math.random() * 10 - 2000;
 		object.position.z = Math.random() * 10 - 2000;
-		scene.add(object);;
+		scene.add(object);
 		targets.simple.push(object);
 
 		let objectb = new THREE.Object3D();
@@ -191,38 +195,26 @@ function crearPeriodo() {
 		object.position.x = Math.random() * 10 - 2000;
 		object.position.y = Math.random() * 10 - 2000;
 		object.position.z = Math.random() * 10 - 2000;
-		scene.add(object);;
+		scene.add(object);
 		targets.simple.push(object);
 
 		let objectb = new THREE.Object3D();
-		objectb.position.x = 0 * 140 - 1330;	  //1-18
+		objectb.position.x = 0 - 1330;	  //1-18
 		objectb.position.y = -i * 180 + 990;	  //1-7
 		targets.table.push(objectb);
 	}
 }
 
-function crearObjetoCSS3D() {
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function () {
-		if (this.readyState == 4 && this.status == 200) {
-			var respuesta = JSON.parse(xhttp.responseText);
-			var elemento = respuesta.elements;
-
-			for (var i = 0; i < elemento.length; i++) {
-
-				let object = new CSS3DObject(crearElementoHTMLYSuEvento(i, elemento[i]));
-				object.position.x = Math.random() * 10 - 2000;
-				object.position.y = Math.random() * 10 - 2000;
-				object.position.z = Math.random() * 10 - 2000;
-				scene.add(object);
-				targets.simple.push(object);
-				posicionarElementosEnTabla(elemento[i]);
-			}
-		}
-	};
-	xhttp.open("GET", "https://alexlovera.github.io/SimuladorDeQuimica/datosDeElementosConExtra.json", false);// false para que no sea asincrono
-	xhttp.send();
-	console.log("tabla", targets.table);
+function crearObjetoCSS3D(elementos) {
+	elementos.forEach((elemento,indice)=> { // modularizar
+		let object = new CSS3DObject(crearElementoHTMLYSuEvento(indice, elemento));
+		object.position.x = Math.random() * 10 - 2000;
+		object.position.y = Math.random() * 10 - 2000;
+		object.position.z = Math.random() * 10 - 2000;
+		scene.add(object);
+		targets.simple.push(object);
+		posicionarElementosEnTabla(elemento);
+	});
 }
 
 function crearElementoHTMLYSuEvento(i, elemento) {
@@ -320,15 +312,15 @@ function abrirModal(i, elemento) {
 
 function agregarDatosAModal(i, elemento) {
 
-	var parrafoConfiguracionElectronica = document.getElementById("configuracion-electronica");
+	let parrafoConfiguracionElectronica = document.getElementById("configuracion-electronica");
 
-	var configElectronicaExterna = manejarStringConfigElectronicaExterna(elemento.electron_configuration);
+	let configElectronicaExterna = manejarStringConfigElectronicaExterna(elemento.electron_configuration);
 	parrafoConfiguracionElectronica.innerHTML = `<strong>Configuracion electronica:</strong> ${configElectronicaExterna}`;
 
-	var parrafoInfoResumida = document.getElementById("informacion-resumida");
+	let parrafoInfoResumida = document.getElementById("informacion-resumida");
 	parrafoInfoResumida.innerHTML = `<strong>Resumen de elemento:</strong> ${elemento.summary}`;
 
-	var electroNegatividad = document.getElementById("electro-negatividad");
+	let electroNegatividad = document.getElementById("electro-negatividad");
 	//electroNegatividad.innerHTML = elemento.electronegativity_pauling != null ? `<strong>Electro negatividad:</strong> ${elemento.electronegativity_pauling}` : "";
 	if (elemento.electronegativity_pauling != null) { // algunos elementos no tienen electronegatividad		
 		electroNegatividad.innerHTML = `<strong>Electro negatividad:</strong> ${elemento.electronegativity_pauling}`;
@@ -336,19 +328,19 @@ function agregarDatosAModal(i, elemento) {
 		electroNegatividad.innerHTML = "";
 	}
 
-	var parrafoDensidad = document.getElementById("densidad");
+	let parrafoDensidad = document.getElementById("densidad");
 	if (elemento.density != null)
 		parrafoDensidad.innerHTML = `<strong>Densidad del elemento:</strong> ${elemento.density}`;
 	else
 		parrafoDensidad.innerHTML = "";
 
-	var grupo = document.getElementById("grupo");
+	let grupo = document.getElementById("grupo");
 	grupo.innerHTML = `<strong>Grupo: </strong> ${elemento.grupo}`;
 
-	var periodo = document.getElementById("periodo");
+	let periodo = document.getElementById("periodo");
 	periodo.innerHTML = `<strong>Periodo: </strong> ${elemento.period}`;
 
-	var bloque = document.getElementById("bloque");
+	let bloque = document.getElementById("bloque");
 	bloque.innerHTML = `<strong>Bloque: </strong> ${elemento.bloque}`;
 
 	document.getElementById('link-wikipedia').setAttribute('href', elemento.source);
@@ -356,9 +348,9 @@ function agregarDatosAModal(i, elemento) {
 }
 
 function manejarStringConfigElectronicaExterna(configElectronica) {
-	var indiceDeLinea = 1;
-	var configElectronicaExterna = "<br>";
-	var listaDeAlgo = configElectronica.split(" ");
+	let indiceDeLinea = 1;
+	let configElectronicaExterna = "<br>";
+	let listaDeAlgo = configElectronica.split(" ");
 	for (let subString of listaDeAlgo) {
 		if (indiceDeLinea == subString[0]) {
 			configElectronicaExterna += `${subString} `;
@@ -432,7 +424,7 @@ function agregarEventoDeClickABoton(target, elementId) {
 		if ('esfera' == elementId) {
 
 			//transform(target, 2000);
-			var centroDeLaEsfera = {
+			let centroDeLaEsfera = {
 				x: 0,
 				y: 0,
 				z: 100
@@ -464,9 +456,9 @@ function transform(targett, duration) {
    console.log("Entra a transform");
    console.log("Longitud de simple en transform", targets.simple.length);	  */
 
-	for (var i = 0; i < targets.simple.length; i++) {
-		var object = targets.simple[i];
-		var target = targett[i];
+	for (let i = 0; i < targets.simple.length; i++) {
+		let object = targets.simple[i];
+		let target = targett[i];
 
 		new TWEEN.Tween(object.position)
 			.to({ x: target.position.x, y: target.position.y, z: target.position.z }, Math.random() * duration + duration)
