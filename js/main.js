@@ -96,6 +96,12 @@ function init() {
 	window.addEventListener('resize', onWindowResize, false);
 }
 
+function obtenerDatosDeElementos(){
+	return fetch("../datosDeElementosConExtra.json")
+		.then(respuesta => respuesta.json())
+		.then(datosElementosTabla => datosElementosTabla.elements);
+}
+
 function posicionarElementosEnTabla(elemento) {
 
 	let object = new THREE.Object3D();
