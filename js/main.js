@@ -38,8 +38,8 @@ const colorPorEstadoDelElemento = {
 	"Gas": "rgba(255, 3, 3, 0.60)"
 }
 
-var camera, scene, renderer;
-var controls;
+let camera, scene, renderer;
+let controls;
 const posicionInicialCamara = {
 	x: 0,
 	y: 0,
@@ -49,8 +49,7 @@ const posicionInicialCamara = {
 const modal = document.querySelector('#my-modal');
 const closeBtn = document.querySelector('.close');
 
-var objects = [];
-var targets = { table: [], esfera: [], simple: [] };
+let targets = { table: [], esfera: [], simple: [] };
 
 obtenerDatosDeElementos().then(elementos => {
 	init(elementos);
@@ -311,15 +310,15 @@ function abrirModal(i, elemento) {
 
 function agregarDatosAModal(i, elemento) {
 
-	var parrafoConfiguracionElectronica = document.getElementById("configuracion-electronica");
+	let parrafoConfiguracionElectronica = document.getElementById("configuracion-electronica");
 
-	var configElectronicaExterna = manejarStringConfigElectronicaExterna(elemento.electron_configuration);
+	let configElectronicaExterna = manejarStringConfigElectronicaExterna(elemento.electron_configuration);
 	parrafoConfiguracionElectronica.innerHTML = `<strong>Configuracion electronica:</strong> ${configElectronicaExterna}`;
 
-	var parrafoInfoResumida = document.getElementById("informacion-resumida");
+	let parrafoInfoResumida = document.getElementById("informacion-resumida");
 	parrafoInfoResumida.innerHTML = `<strong>Resumen de elemento:</strong> ${elemento.summary}`;
 
-	var electroNegatividad = document.getElementById("electro-negatividad");
+	let electroNegatividad = document.getElementById("electro-negatividad");
 	//electroNegatividad.innerHTML = elemento.electronegativity_pauling != null ? `<strong>Electro negatividad:</strong> ${elemento.electronegativity_pauling}` : "";
 	if (elemento.electronegativity_pauling != null) { // algunos elementos no tienen electronegatividad		
 		electroNegatividad.innerHTML = `<strong>Electro negatividad:</strong> ${elemento.electronegativity_pauling}`;
@@ -327,19 +326,19 @@ function agregarDatosAModal(i, elemento) {
 		electroNegatividad.innerHTML = "";
 	}
 
-	var parrafoDensidad = document.getElementById("densidad");
+	let parrafoDensidad = document.getElementById("densidad");
 	if (elemento.density != null)
 		parrafoDensidad.innerHTML = `<strong>Densidad del elemento:</strong> ${elemento.density}`;
 	else
 		parrafoDensidad.innerHTML = "";
 
-	var grupo = document.getElementById("grupo");
+	let grupo = document.getElementById("grupo");
 	grupo.innerHTML = `<strong>Grupo: </strong> ${elemento.grupo}`;
 
-	var periodo = document.getElementById("periodo");
+	let periodo = document.getElementById("periodo");
 	periodo.innerHTML = `<strong>Periodo: </strong> ${elemento.period}`;
 
-	var bloque = document.getElementById("bloque");
+	let bloque = document.getElementById("bloque");
 	bloque.innerHTML = `<strong>Bloque: </strong> ${elemento.bloque}`;
 
 	document.getElementById('link-wikipedia').setAttribute('href', elemento.source);
@@ -347,9 +346,9 @@ function agregarDatosAModal(i, elemento) {
 }
 
 function manejarStringConfigElectronicaExterna(configElectronica) {
-	var indiceDeLinea = 1;
-	var configElectronicaExterna = "<br>";
-	var listaDeAlgo = configElectronica.split(" ");
+	let indiceDeLinea = 1;
+	let configElectronicaExterna = "<br>";
+	let listaDeAlgo = configElectronica.split(" ");
 	for (let subString of listaDeAlgo) {
 		if (indiceDeLinea == subString[0]) {
 			configElectronicaExterna += `${subString} `;
@@ -423,7 +422,7 @@ function agregarEventoDeClickABoton(target, elementId) {
 		if ('esfera' == elementId) {
 
 			//transform(target, 2000);
-			var centroDeLaEsfera = {
+			let centroDeLaEsfera = {
 				x: 0,
 				y: 0,
 				z: 100
@@ -455,9 +454,9 @@ function transform(targett, duration) {
    console.log("Entra a transform");
    console.log("Longitud de simple en transform", targets.simple.length);	  */
 
-	for (var i = 0; i < targets.simple.length; i++) {
-		var object = targets.simple[i];
-		var target = targett[i];
+	for (let i = 0; i < targets.simple.length; i++) {
+		let object = targets.simple[i];
+		let target = targett[i];
 
 		new TWEEN.Tween(object.position)
 			.to({ x: target.position.x, y: target.position.y, z: target.position.z }, Math.random() * duration + duration)
