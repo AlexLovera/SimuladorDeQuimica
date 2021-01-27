@@ -52,10 +52,12 @@ const closeBtn = document.querySelector('.close');
 var objects = [];
 var targets = { table: [], esfera: [], simple: [] };
 
-init();
-animate();
+obtenerDatosDeElementos().then(elementos => {
+	init(elementos);
+	animate();
+});
 
-function init() {
+function init(elementos) {
 
 	camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 10000);
 	camera.position.z = posicionInicialCamara["z"];
